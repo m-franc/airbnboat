@@ -10,3 +10,112 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.container-fluid{
+  height: 40px;
+  box-shadow: 5px 5px 10 $bleu-moyen;
+
+}
+.navbar-brand {
+  height: 65px;
+  width: 60px;
+  margin-left: 20px;
+  margin-top: 0px;
+}
+
+.form-control {
+  border-radius: 20px;
+  border: 1px solid;
+  border-color: $bleu-moyen;
+  color: $bleu-moyen;
+  margin: 0px;
+  height: 30px;
+
+  &:focus{
+    outline: none;
+    border-color: $jaune-fonce;
+    box-shadow: 5px 5px 0 $jaune-fonce;
+  }
+}
+
+.btn-btn-outline-success {
+  background-color: $bleu-moyen ;
+  border: 1px solid;
+  border-color: $bleu-moyen;
+  border-radius: 15px ;
+  color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  &:hover {
+    background-color: $jaune-fonce;
+    color: $bleu-moyen;
+    border-color: $bleu-moyen;
+    box-shadow: 5px 5px 0 $bleu-moyen;
+  }
+}
+#home {
+  color: $bleu-moyen;
+
+  &:hover{
+    color: $jaune-fonce;
+  }
+}
+
+#rent {
+  color: $jaune-fonce;
+
+  &:hover{
+    color: $bleu-moyen;
+  }
+}
+
+#categories{
+  color: $bleu-moyen;
+  &:hover {
+    color: $jaune-fonce;
+  }
+}
+
+.dropdown-menu{
+  border: 1px solid;
+  border-color: $bleu-moyen;
+  border-radius: 10px;
+  box-shadow: 5px 5px 0 $jaune-fonce;
+
+
+}
+
+.dropdown-item{
+  color: $bleu-moyen;
+  &:hover{
+    color: $jaune-fonce;
+    background-color: $bleu-moyen;
+  }
+
+}
+
+
+.profile {
+  color: $bleu-moyen;
+  margin-right: 30px;
+  height: 35px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 30px;
+  padding-right: 10px;
+  border: 1px solid;
+  border-color: $bleu-moyen;
+  border-radius: 15px;
+
+  &:hover {
+    box-shadow: 5px 5px 0 $jaune-fonce;
+  }
+}
+
+
+
+
+.menu {
+  justify-content: center;
+}
