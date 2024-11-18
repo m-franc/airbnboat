@@ -35,6 +35,7 @@
     outline: none;
     border-color: $jaune-fonce;
     box-shadow: 5px 5px 0 $jaune-fonce;
+    transition: box-shadow 0.3s ease;
   }
 }
 
@@ -52,6 +53,7 @@
     color: $bleu-moyen;
     border-color: $bleu-moyen;
     box-shadow: 5px 5px 0 $bleu-moyen;
+    transition: box-shadow 0.3s ease;
   }
 }
 #home {
@@ -70,30 +72,51 @@
   }
 }
 
-#categories{
+/* Style pour #categories au survol */
+#categories {
   color: $bleu-moyen;
+  transition: color 0.3s ease; /* Ajout d'une transition douce pour la couleur */
   &:hover {
     color: $jaune-fonce;
   }
 }
 
-.dropdown-menu{
+/* Cache le menu par défaut */
+.dropdown-menu {
+  display: none; /* Le menu est caché par défaut */
+  opacity: 0; /* Invisible */
+  transform: translateY(-10px); /* Position légèrement au-dessus */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Transition fluide pour l'apparition */
+}
+
+/* Affiche le menu lorsqu'on survole le parent */
+.nav-item:hover .dropdown-menu {
+  display: block; /* Affiche le menu */
+  opacity: 1; /* Rendre visible */
+  transform: translateY(0); /* Ramène le menu à sa position normale */
+}
+
+/* Style général pour le menu déroulant */
+.dropdown-menu {
   border: 1px solid;
   border-color: $bleu-moyen;
   border-radius: 10px;
   box-shadow: 5px 5px 0 $jaune-fonce;
-
-
+  transition: box-shadow 0.3s ease; /* Transition pour l'effet de box-shadow */
 }
 
-.dropdown-item{
+/* Style pour chaque item du menu */
+.dropdown-item {
   color: $bleu-moyen;
-  &:hover{
+  transition: color 0.3s ease, background-color 0.3s ease; /* Ajout d'une transition pour la couleur et le fond */
+
+  &:hover {
     color: $jaune-fonce;
     background-color: $bleu-moyen;
+    transition: color 0.3s ease, background-color 0.3s ease; /* Transition pour couleur de fond et de texte */
   }
-
 }
+
 
 
 .profile {
@@ -110,6 +133,7 @@
 
   &:hover {
     box-shadow: 5px 5px 0 $jaune-fonce;
+    transition: box-shadow 0.3s ease;
   }
 }
 
