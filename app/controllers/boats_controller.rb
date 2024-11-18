@@ -21,7 +21,7 @@ class BoatsController < ApplicationController
     end
   end
 
-  def updapte
+  def update
     @boat = Boat.new(boat_params)
     if @boat.save
       redirect_to @boat, notice: 'Boat was successfully udpated.'
