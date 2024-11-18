@@ -10,3 +10,25 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+$bleu-fonce: #1C3043;
+$bleu-moyen: #29687B;
+$bleu-clair:#30C3D3;
+
+$jaune-fonce: #F1AE00;
+$jaune-claire:#FFEB59;
+
+$degrade: linear-gradient(to right bottom, #1c3043, #1f3a4e, #224459, #244e64, #26596e, #28657a, #297186, #2b7e92, #2c8fa3, #2da0b3, #2eb1c3, #30c3d3);
+
+
+.navbar-brand {
+  height: 65px;
+  width: 60px;
+  margin-left: 20px;
+  margin-top: 0px;
+}
+
+.form-control {
+  border-radius: 20px;
+  border: 2px solid $degrade;
+}
