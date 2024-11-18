@@ -17,7 +17,7 @@ class BoatsController < ApplicationController
     if @boat.save
       redirect_to @boat, notice: 'Boat was successfully created.'
     else
-      rend :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -26,7 +26,7 @@ class BoatsController < ApplicationController
     if @boat.save
       redirect_to @boat, notice: 'Boat was successfully udpated.'
     else
-      rend :new
+      render :new, status: :unprocessable_entity
     end
   end
 
