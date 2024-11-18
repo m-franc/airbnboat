@@ -3,7 +3,7 @@ class CreateBoats < ActiveRecord::Migration[7.1]
     create_table :boats do |t|
       t.text :content
       t.string :location
-      t.string :capacity
+      t.integer :capacity
       t.string :size
       t.integer :daily_price
 
