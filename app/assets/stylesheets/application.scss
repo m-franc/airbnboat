@@ -13,6 +13,8 @@
 
 .container-fluid{
   height: 40px;
+  box-shadow: 5px 5px 10 $bleu-moyen;
+
 }
 .navbar-brand {
   height: 65px;
@@ -88,6 +90,7 @@
   color: $bleu-moyen;
   &:hover{
     color: $jaune-fonce;
+    background-color: $bleu-moyen;
   }
 
 }
