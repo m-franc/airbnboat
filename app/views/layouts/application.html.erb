@@ -13,49 +13,66 @@
 
   <body>
     <header>
+      <nav class="navbar navbar-expand bg-body-tertiary">
+        <div class="container-fluid">
+          <%= image_tag "airbnb_boat.png", class: "navbar-brand", alt: "Boat-image"%>
+          <div class="menu">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <%= link_to "Home", root_path, class: "nav-link active", id: "home", aria: { current: "page" } %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Rent My Boat", new_boat_path, class: "nav-link active", id: "rent", aria: { current: "page" } %>
+              </li>
+              <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="categories" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Categories
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="categories">
+          <li><%= link_to "Little Boats", boats_path, class: "dropdown-item" %></li>
+          <li><%= link_to "Big Boats", boats_path, class: "dropdown-item" %></li>
+          <li><%= link_to "Yatchs", boats_path, class: "dropdown-item" %></li>
+        </ul>
+        </div>
+        </div>
+          </div>
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <%= image_tag "airbnb_boat.png", class: "navbar-brand", alt: "Boat-image"%>
-    <div class="menu">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#" id="home">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" id="rent">Rent My Boat</a>
-        </li>
-        <div class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" id="categories" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Categories
-  </a>
-  <ul class="dropdown-menu" aria-labelledby="categories">
-    <li><a class="dropdown-item" href="#">Little Boat</a></li>
-    <li><a class="dropdown-item" href="#">Big Boat</a></li>
-    <li><a class="dropdown-item" href="#">Yacht</a></li>
-  </ul>
-</div>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn-btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+            <div class="profile"><%= link_to "", user_session_path, class: "fa-solid fa-user bleu-moyen" %></div>
+            </div>
+        </div>
+        </div>
+      </nav>
+    </header>
 
-  </div>
-    </div>
-
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn-btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-      </form>
-      <div class="profile"><%= link_to "", user_session_path, class: "fa-solid fa-user bleu-moyen" %></div>
+      <!-- Modal for Flash Messages -->
+      <div class="modal fade" id="flashModal" tabindex="-1" aria-labelledby="flashModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="flashModalLabel">Notification</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <%= flash[:notice] %>
+              <%= flash[:alert] %>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+            </div>
+          </div>
+        </div>
       </div>
-  </div>
-  </div>
-</nav>
-</header>
 
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <%# <p class="notice"><%= notice %></p>
+      <%# <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 

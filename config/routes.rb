@@ -10,5 +10,10 @@ Rails.application.routes.draw do
   resources :boats
 
   root "pages#home"
+<<<<<<< HEAD
   # Defines the root path route ("/")
+=======
+
+
+>>>>>>> master
 end

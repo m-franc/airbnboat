@@ -24,6 +24,18 @@
     box-shadow: 5px 5px 0 $jaune-fonce;
     transition: box-shadow 0.3s ease;
   }
+
+  @media (max-width: 900px) {
+    width: 200px; /* Ajustez la largeur pour les écrans plus petits */
+  }
+
+  @media (max-width: 800px) {
+    width: 150px; /* Encore plus petite pour les très petits écrans */
+  }
+
+  @media (max-width: 700px) {
+    width: 100px; /* Réduire davantage sur les écrans très étroits */
+  }
 }
 
 .btn-btn-outline-success {
@@ -34,6 +46,7 @@
   color: white;
   padding-left: 15px;
   padding-right: 15px;
+  margin-right: 4px;
 
   &:hover {
     background-color: $jaune-fonce;
@@ -133,4 +146,38 @@
 
 .bleu-moyen{
   color: $bleu-moyen;
+}
+
+@media (max-width: 900px) {
+  .profile {
+    margin-right: 5px; /* Réduction de la marge sur les petits écrans */
+  }
+}
+
+@media (max-width: 700px) {
+  .profile {
+    margin-right: 2px; /* Encore plus de réduction sur les écrans très petits */
+  }
+
+  @media (max-width: 510px) {
+  .navbar .nav-link, .navbar .dropdown-menu {
+    text-align: center; /* Centre les éléments du menu */
+  }
+}
+
+/* Lorsque la largeur de l'écran est inférieure à 700px, afficher le hamburger */
+@media (max-width: 700px) {
+  .navbar-expand-lg .navbar-collapse {
+    display: none; /* Cache le menu sur les petits écrans */
+  }
+
+  .navbar-expand-lg .navbar-toggler {
+    display: block; /* Affiche le bouton hamburger */
+  }
+
+  .navbar-expand-lg .navbar-collapse.collapse {
+    display: block !important; /* Affiche le menu quand il est activé */
+  }
+}
+
 }

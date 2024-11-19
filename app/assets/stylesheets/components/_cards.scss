@@ -1,0 +1,95 @@
+.container-card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  justify-items: center; /* Centre chaque carte individuellement */
+  margin: 0 auto; /* Centre la grille globalement */
+
+  @media (max-width: 1000px) {
+    grid-template-columns: repeat(2, 1fr); /* Passe à 2 cartes par ligne */
+  }
+
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr; /* Passe à 1 carte par ligne */
+  }
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+  margin: 0; /* Supprime la marge supplémentaire */
+  width: 360px;
+  height: 270px;
+  box-shadow: 0 2px 4px rgba(52, 152, 219, 0.2);
+  transition: all 0.3s ease;
+
+  @media (max-width: 700px) {
+    width: 75%;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 3px 3px $jaune-fonce;
+  }
+
+  ul {
+    list-style: none; /* Supprime les points des listes */
+    padding: 0; /* Supprime le padding par défaut */
+    margin: 0; /* Supprime la marge par défaut */
+  }
+
+  li {
+    list-style: none; /* Enlève les points des listes */
+    padding: 0;
+    margin: 0;
+  }
+
+  img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0 ;
+  }
+
+  h1 {
+    margin: 7px 0 0 7px;
+    font-size: 22px;
+    color: $bleu-moyen;
+  }
+
+  h2 {
+    border: 1px solid;
+    border-color: $bleu-moyen;
+    background-color: $bleu-moyen;
+    border-radius: 5px;
+    padding: 5px;
+    color: $jaune-fonce;
+    font-size: 17px;
+    position: absolute;
+    bottom: 10px; /* 10px du bas de la carte */
+    right: 10px; /* 10px du bord droit de la carte */
+    margin: 0; /* Élimine tout espace supplémentaire */
+  }
+
+  h3{
+    font-size: 14px;
+    color: grey;
+    position: absolute;
+    top: 160px;
+     right: 10px;
+  }
+
+  p{
+    font-size: 13px;
+    margin: 5px 7px 7px 7px;
+  }
+
+}
+
+
+
+#banner img {
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(90, 90, 90, 0.4);
+  margin-bottom: 2em;
+}

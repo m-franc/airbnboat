@@ -1,0 +1,18 @@
+<div class=" container m-24 p-3 w-80">
+  <h2 class="text-info">Rent My Boat</h2>
+
+  <%= simple_form_for @boat do |f| %>
+    <div>
+      <%= f.input :name, placeholder: 'Enter the name of your boat'%>
+      <%= f.input :content, hint: 'Description of your offer.' %>
+      <%= f.input :location, placeholder: 'Location' %>
+      <%= f.input :capacity, placeholder: 'Capacity' %>
+      <%= f.input :size, placeholder: 'Size of the boat' %>
+      <%= f.input :daily_price, placeholder: 'Enter daily price (eg. 500)', hint: 'Must be a positive number' %>
+      <%= f.input :url_img, placeholder: 'Put image link' %>
+      <div class="row d-flex">
+        <%= f.button :submit, class:"btn justify-content-center align-items-center btn-btn-outline-success w-50"%>
+      </div>
+    </div>
+  <% end %>
+</div>
