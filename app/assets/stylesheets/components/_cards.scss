@@ -1,8 +1,18 @@
-
-.container {
+.container-card {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+  justify-items: center; /* Centre chaque carte individuellement */
+  margin: 0 auto; /* Centre la grille globalement */
+
+  @media (max-width: 1000px) {
+    grid-template-columns: repeat(2, 1fr); /* Passe à 2 cartes par ligne */
+  }
+
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr; /* Passe à 1 carte par ligne */
+  }
+}
 
 .card {
   border: none;
@@ -11,7 +21,11 @@
   width: 360px;
   height: 270px;
   box-shadow: 0 2px 4px rgba(52, 152, 219, 0.2);
-  transition: all 0.3s ease; /* Ajoute une transition fluide lors du survol */
+  transition: all 0.3s ease;
+
+  @media (max-width: 700px) {
+    width: 75%;
+  }
 
   &:hover {
     transform: scale(1.05);
@@ -72,7 +86,7 @@
 
 }
 
-}
+
 
 #banner img {
   width: 100%;
