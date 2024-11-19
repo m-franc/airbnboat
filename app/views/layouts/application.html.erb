@@ -9,13 +9,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+
   </head>
 
   <body>
     <header>
       <nav class="navbar navbar-expand bg-body-tertiary">
         <div class="container-fluid">
-          <%= image_tag "airbnb_boat.png", class: "navbar-brand", alt: "Boat-image"%>
+          <%= image_tag "airbnboat_navbar.png", class: "navbar-brand", alt: "Boat-image"%>
           <div class="menu">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -33,9 +35,12 @@
           Categories
         </a>
         <ul class="dropdown-menu" aria-labelledby="categories">
-          <li><%= link_to "Little Boats", boats_path, class: "dropdown-item" %></li>
-          <li><%= link_to "Big Boats", boats_path, class: "dropdown-item" %></li>
-          <li><%= link_to "Yatchs", boats_path, class: "dropdown-item" %></li>
+          <li><%= link_to "Venise", boats_path, class: "dropdown-item" %></li>
+          <li><%= link_to "La Rochelle", boats_path, class: "dropdown-item" %></li>
+          <li><%= link_to "Londres", boats_path, class: "dropdown-item" %></li>
+          <li><%= link_to "Saint-Tropez", boats_path, class: "dropdown-item" %></li>
+          <li><%= link_to "Marbella", boats_path, class: "dropdown-item" %></li>
+          <li><%= link_to "Le Pirée", boats_path, class: "dropdown-item" %></li>
         </ul>
         </div>
         </div>
@@ -71,8 +76,7 @@
         </div>
       </div>
 
-      <%# <p class="notice"><%= notice %></p>
-      <%# <p class="alert"><%= alert %></p>
+
     <%= yield %>
   </body>
 
