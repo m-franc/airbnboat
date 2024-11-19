@@ -22,22 +22,21 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#" id="home">Home</a>
+                <%= link_to "Home", root_path, class: "nav-link active", id: "home", aria: { current: "page" } %>
               </li>
               <li class="nav-item">
-                <a class="nav-link" id="rent" href="/boats/new">Rent My Boat</a>
+                <%= link_to "Rent My Boat", new_boat_path, class: "nav-link active", id: "rent", aria: { current: "page" } %>
               </li>
               <div class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="categories" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           Categories
         </a>
         <ul class="dropdown-menu" aria-labelledby="categories">
-          <li><a class="dropdown-item" href="#">Little Boat</a></li>
-          <li><a class="dropdown-item" href="#">Big Boat</a></li>
-          <li><a class="dropdown-item" href="#">Yacht</a></li>
+          <li><%= link_to "Little Boats", boats_path, class: "dropdown-item" %></li>
+          <li><%= link_to "Big Boats", boats_path, class: "dropdown-item" %></li>
+          <li><%= link_to "Yatchs", boats_path, class: "dropdown-item" %></li>
         </ul>
         </div>
-
         </div>
           </div>
 
