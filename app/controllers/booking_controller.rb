@@ -1,5 +1,4 @@
-class BookingController < ApplicationController
-  class BookingsController < ApplicationController
+class BookingsController < ApplicationController
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
 
   # GET /bookings
@@ -56,6 +55,4 @@ class BookingController < ApplicationController
   def booking_params
     params.require(:booking).permit(:user_id, :boat_id, :start_date, :end_date, :people)
   end
-end
-
 end
