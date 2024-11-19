@@ -4,7 +4,7 @@ class BookingsController < ApplicationController
 
   # GET /bookings
   def index
-    @booking = Booking.all
+    @bookings = Booking.all
   end
 
   # GET /bookings/1
@@ -15,18 +15,21 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     @boats = Boat.all
-    @booking_dates = { from: @booking.start_date, to: @booking.end_date }
   end
 
   # POST /bookings
   def create
     @booking = Booking.new(booking_params)
+    @booking.user = current_user
+    dates = params["booking"]["start_date"].split("to").map(&:strip)
+    @booking.start_date = dates[0]
+    @booking.end_date = dates[1]
 
-    if @booking.save
-      redirect_to @booking, notice: 'La réservation a été créée avec succès.'
-    else
-      render :new, status: :unprocessable_entity
-    end
+     @booking.save!
+      redirect_to bookings_path, notice: 'La réservation a été créée avec succès.'
+    # else
+    #   render :new, status: :unprocessable_entity
+    # end
   end
 
   # GET /bookings/1/edit
@@ -36,7 +39,7 @@ class BookingsController < ApplicationController
   # PATCH/PUT /bookings/1
   def update
     if @booking.update(booking_params)
-      redirect_to @booking, notice: 'La réservation a été mise à jour avec succès.'
+      redirect_to bookings_path, notice: 'La réservation a été mise à jour avec succès.'
     else
       render :edit, status: :unprocessable_entity
     end
@@ -45,7 +48,7 @@ class BookingsController < ApplicationController
   # DELETE /bookings/1
   def destroy
     @booking.destroy
-    redirect_to bookings_url, notice: 'La réservation a été supprimée avec succès.'
+    redirect_to bookings_path, notice: 'La réservation a été supprimée avec succès.'
   end
 
   private
@@ -57,6 +60,6 @@ class BookingsController < ApplicationController
 
   # Méthode pour filtrer les paramètres autorisés
   def booking_params
-    params.require(:booking).permit(:user_id, :boat_id, :people)
+    params.require(:booking).permit(:boat_id, :people, :user_id)
   end
 end
