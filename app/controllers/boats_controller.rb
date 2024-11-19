@@ -19,7 +19,7 @@ class BoatsController < ApplicationController
   def create
     @boat = Boat.new(boat_params)
     if @boat.save
-      redirect_to @boat, notice: 'Boat was successfully created.'
+      redirect_to boats_path, notice: 'Boat was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -28,7 +28,7 @@ class BoatsController < ApplicationController
   def update
     @boat = Boat.new(boat_params)
     if @boat.save
-      redirect_to @boat, notice: 'Boat was successfully udpated.'
+      redirect_to boats_path, notice: 'Boat was successfully udpated.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -46,6 +46,6 @@ class BoatsController < ApplicationController
   end
 
   def boat_params
-    params.require(:boat).permit(:content, :location, :capacity, :size, :url_img)
+    params.require(:boat).permit(:name, :content, :location, :capacity, :size, :daily_price, :url_img)
   end
 end
