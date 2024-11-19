@@ -7,29 +7,61 @@ $jaune-claire:#FFEB59;
 $background-white: #f0f0f0;
 $degrade: linear-gradient(to right bottom, #1c3043, #1f3a4e, #224459, #244e64, #26596e, #28657a, #297186, #2b7e92, #2c8fa3, #2da0b3, #2eb1c3, #30c3d3);
 
-
-// FOOTER Cyrill_test
 footer {
-  background-color: $background-white;
-  color: $bleu-fonce;
+  background: linear-gradient(
+  rgba($bleu-fonce, 0.9),
+  rgba($bleu-clair, 0.9)
+  );
+  color: $background-white;
+  padding: 20px 0 20px 0;
 
-  .footer-logo {
-    height: 80px;
+  .mb-3 {
+    margin-bottom: 0.5rem !important;
+  }
+
+  .navbar-brand {
+    height: 160px;
     width: auto;
+    margin: 10px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.04);
+      filter: brightness(1.1) drop-shadow(0 0 1px $background-white);
+    }
   }
 
   a {
     text-decoration: none;
-    color: inherit;
+    color: $background-white;
     &:hover {
       color: $jaune-claire;
     }
   }
 
+  .mail {
+    color: $background-white;
+  }
+
+  p {
+    color: $background-white;
+  }
+
   i {
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     &:hover {
       color: $jaune-claire;
+      transform: scale(1.1);
+    }
+  }
+
+  .col-md-4.text-end {
+    a.text-white {
+      color: $background-white !important;
+
+      &:hover {
+        color: $jaune-claire !important;
+      }
     }
   }
 }
