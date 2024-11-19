@@ -2,17 +2,18 @@
 
 <div id="banner"><%= image_tag 'BoatHeader.png' %></div>
 
-
 <div class="container-card">
   <% @boats.each do |boat| %>
-    <div class="card">
-      <ul>
-        <li><img src="<%= boat.url_img %>" alt=""></li>
-        <li><h1><%= boat.name %></h1></li>
-        <li><h3><%= boat.capacity %> <i class="fa-solid fa-person"></i></h3></li>
-        <li><p><%= boat.content %></p></li>
-        <li><h2><%= boat.daily_price %> €</h2></li>
-      </ul>
-    </div>
+    <%= link_to boat_path(boat) do %> <!-- Utilisation de `boat_path(boat)` pour rediriger vers la page show -->
+      <div class="card">
+        <ul>
+          <li><img src="<%= boat.url_img %>" alt=""></li>
+          <li><h1><%= boat.name %></h1></li>
+          <li><h3><%= boat.capacity %> <i class="fa-solid fa-person"></i></h3></li>
+          <li><p><%= boat.content %></p></li>
+          <li><h2><%= boat.daily_price %> €</h2></li>
+        </ul>
+      </div>
+    <% end %> <!-- Fermeture de `link_to` ici -->
   <% end %>
 </div>

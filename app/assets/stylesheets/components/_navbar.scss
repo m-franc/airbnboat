@@ -4,10 +4,11 @@
 
 }
 .navbar-brand {
-  height: 65px;
-  width: 60px;
+  height: 55px;
+  width: 105px;
   margin-left: 20px;
   margin-top: 0px;
+
 }
 
 .form-control {
@@ -60,7 +61,7 @@
   color: $bleu-moyen;
 
   &:hover{
-    color: $jaune-fonce;
+    color: $bleu-clair;
   }
 }
 
@@ -77,7 +78,7 @@
   color: $bleu-moyen;
   transition: color 0.3s ease; /* Ajout d'une transition douce pour la couleur */
   &:hover {
-    color: $jaune-fonce;
+    color: $bleu-clair;
   }
 }
 
