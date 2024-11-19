@@ -1,0 +1,51 @@
+.boat-details {
+  margin-top: 50px;
+
+  h1 {
+    color: $bleu-fonce;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+
+  .details-card {
+    background-color: #fff;
+    border: 1px solid $bleu-fonce;
+    color: $bleu-moyen;
+
+    p {
+      font-size: 1rem;
+      color: $bleu-fonce;
+    }
+  }
+
+  .btn-success {
+    background-color: $bleu-clair;
+    border-color: $bleu-moyen;
+
+    &:hover {
+      background-color: $bleu-moyen;
+      border-color: $bleu-clair;
+    }
+  }
+
+  .btn-outline {
+    margin-bottom: 30px;
+    border-color: $bleu-fonce;
+    color: $bleu-fonce;
+
+    &:hover {
+      background-color: $bleu-fonce;
+      color: #fff;
+    }
+  }
+
+  img {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 1px solid $bleu-fonce;
+  }
+
+  .text-muted {
+    font-size: 1.1rem;
+    color: $bleu-moyen;
+  }
+}
