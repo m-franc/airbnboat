@@ -1,12 +1,136 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+.container-fluid{
+  height: 40px;
+  box-shadow: 5px 5px 10 $bleu-moyen;
+
+}
+.navbar-brand {
+  height: 65px;
+  width: 60px;
+  margin-left: 20px;
+  margin-top: 0px;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.form-control {
+  border-radius: 20px;
+  border: 1px solid;
+  border-color: $bleu-moyen;
+  color: $bleu-moyen;
+  margin: 0px;
+  height: 30px;
+
+  &:focus{
+    outline: none;
+    border-color: $jaune-fonce;
+    box-shadow: 5px 5px 0 $jaune-fonce;
+    transition: box-shadow 0.3s ease;
+  }
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.btn-btn-outline-success {
+  background-color: $bleu-moyen ;
+  border: 1px solid;
+  border-color: $bleu-moyen;
+  border-radius: 15px ;
+  color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  &:hover {
+    background-color: $jaune-fonce;
+    color: $bleu-moyen;
+    border-color: $bleu-moyen;
+    box-shadow: 5px 5px 0 $bleu-moyen;
+    transition: box-shadow 0.3s ease;
+  }
+}
+#home {
+  color: $bleu-moyen;
+
+  &:hover{
+    color: $jaune-fonce;
+  }
+}
+
+#rent {
+  color: $jaune-fonce;
+
+  &:hover{
+    color: $bleu-moyen;
+  }
+}
+
+/* Style pour #categories au survol */
+#categories {
+  color: $bleu-moyen;
+  transition: color 0.3s ease; /* Ajout d'une transition douce pour la couleur */
+  &:hover {
+    color: $jaune-fonce;
+  }
+}
+
+/* Cache le menu par défaut */
+.dropdown-menu {
+  display: none; /* Le menu est caché par défaut */
+  opacity: 0; /* Invisible */
+  transform: translateY(-10px); /* Position légèrement au-dessus */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Transition fluide pour l'apparition */
+}
+
+/* Affiche le menu lorsqu'on survole le parent */
+.nav-item:hover .dropdown-menu {
+  display: block; /* Affiche le menu */
+  opacity: 1; /* Rendre visible */
+  transform: translateY(0); /* Ramène le menu à sa position normale */
+}
+
+/* Style général pour le menu déroulant */
+.dropdown-menu {
+  border: 1px solid;
+  border-color: $bleu-moyen;
+  border-radius: 10px;
+  box-shadow: 5px 5px 0 $jaune-fonce;
+  transition: box-shadow 0.3s ease; /* Transition pour l'effet de box-shadow */
+}
+
+/* Style pour chaque item du menu */
+.dropdown-item {
+  color: $bleu-moyen;
+  transition: color 0.3s ease, background-color 0.3s ease; /* Ajout d'une transition pour la couleur et le fond */
+
+  &:hover {
+    color: $jaune-fonce;
+    background-color: $bleu-moyen;
+    transition: color 0.3s ease, background-color 0.3s ease; /* Transition pour couleur de fond et de texte */
+  }
+}
+
+
+
+.profile {
+  color: $bleu-moyen;
+  margin-right: 30px;
+  height: 35px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 30px;
+  padding-right: 10px;
+  border: 1px solid;
+  border-color: $bleu-moyen;
+  border-radius: 15px;
+
+  &:hover {
+    box-shadow: 5px 5px 0 $jaune-fonce;
+    transition: box-shadow 0.3s ease;
+  }
+}
+
+
+
+
+.menu {
+  justify-content: center;
+}
+
+.bleu-moyen{
+  color: $bleu-moyen;
 }
