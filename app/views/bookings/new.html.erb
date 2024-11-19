@@ -1,0 +1,6 @@
+<h1>COUCOU</h1>
+
+<%= simple_form_for @booking do |b| %>
+  <%= b.association :boats, prompt: "Choose a boat" %>
+  <%= b.button :submit %>
+<% end %>

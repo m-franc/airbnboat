@@ -1,10 +1,10 @@
-class BookingController < ApplicationController
-  class BookingsController < ApplicationController
+class BookingsController < ApplicationController
+
   before_action :set_booking, only: [:show, :edit, :update, :destroy]
 
   # GET /bookings
   def index
-    @bookings = Booking.all
+    @booking = Booking.all
   end
 
   # GET /bookings/1
@@ -14,6 +14,7 @@ class BookingController < ApplicationController
   # GET /bookings/new
   def new
     @booking = Booking.new
+    @boats = Boat.all
   end
 
   # POST /bookings
@@ -56,6 +57,4 @@ class BookingController < ApplicationController
   def booking_params
     params.require(:booking).permit(:user_id, :boat_id, :start_date, :end_date, :people)
   end
-end
-
 end
