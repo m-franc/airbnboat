@@ -1,22 +1,23 @@
-<footer class="bg-dark text-white py-4">
+<footer>
   <div class="container text-center">
     <!-- Logo au centre -->
     <div class="mb-3">
-      <%= image_tag "airbnb_boat.png", alt: "Boat-image", class: "navbar-brand" %>
+      <%= image_tag "airbnboat.png", alt: "Boat-image", class: "navbar-brand" %>
     </div>
 
     <!-- Ligne des icônes et du texte -->
     <div class="row justify-content-between align-items-center">
       <!-- Icônes réseaux sociaux -->
       <div class="col-md-4 text-start d-flex justify-content-center justify-content-md-start">
-        <a href="#" class="text-white mx-2"><i class="fab fa-facebook fa-2x"></i></a>
-        <a href="#" class="text-white mx-2"><i class="fab fa-twitter fa-2x"></i></a>
+        <a href="#" class="text-white mx-2"><i class="fa-brands fa-square-facebook fa-2x"></i></a>
+        <a href="#" class="text-white mx-2"><i class="fa-brands fa-square-x-twitter fa-2x"></i></a>
         <a href="#" class="text-white mx-2"><i class="fab fa-instagram fa-2x"></i></a>
       </div>
 
       <!-- Texte au centre -->
       <div class="col-md-4 text-center">
-        <p class="mb-1">Contact : fake.email@example.com | +33 6 00 00 00 00</p>
+        <p class="mb-1"><%= image_tag "mail.svg", class: "mail", alt: "mail-image"%> <a href="mailto:contact@airbnboat.com" class="mail">contact@airbnboat.com</a> | <%= image_tag "phone.svg", class: "phone", alt: "phone-image"%> +33 6 01 02 03 04</p>
+        <p class="mb-1"></p>
         <p class="mb-0">© 2024 - Tous droits réservés</p>
       </div>
 
