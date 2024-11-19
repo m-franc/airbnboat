@@ -15,11 +15,13 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     @boats = Boat.all
+    @booking_dates = { from: @booking.start_date, to: @booking.end_date }
   end
 
   # POST /bookings
   def create
     @booking = Booking.new(booking_params)
+
     if @booking.save
       redirect_to @booking, notice: 'La réservation a été créée avec succès.'
     else
@@ -55,6 +57,6 @@ class BookingsController < ApplicationController
 
   # Méthode pour filtrer les paramètres autorisés
   def booking_params
-    params.require(:booking).permit(:user_id, :boat_id, :start_date, :end_date, :people)
+    params.require(:booking).permit(:user_id, :boat_id, :people)
   end
 end
