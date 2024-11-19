@@ -1,6 +1,9 @@
 <h1>COUCOU</h1>
 <%= simple_form_for @booking do |b| %>
   <%= b.input :boat_id, :collection => @boats %>
-  <%= b.input :start_date %>
+  <%= b.input :slot,
+              as: :string,
+              input_html: { data: { controller: "datepicker" } } %>
+
   <%= b.button :submit %>
 <% end %>
