@@ -7,3 +7,107 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+boats = [
+  {
+    name: "Sea Spirit",
+    content: "Luxury yacht perfect for day cruises and special events",
+    location: "Miami, FL",
+    capacity: 12,
+    size: 3,
+    daily_price: 1200,
+    url_img: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?ixlib=rb-4.0.3"
+  },
+  {
+    name: "Wave Runner",
+    content: "Sporty speedboat ideal for water sports and coastal adventures",
+    location: "San Diego, CA",
+    capacity: 6,
+    size: 3,
+    daily_price: 450,
+    url_img: "https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?ixlib=rb-4.0.3"
+  },
+  {
+    name: "Island Hopper",
+    content: "Comfortable catamaran great for island exploration",
+    location: "Honolulu, HI",
+    capacity: 8,
+    size: 3,
+    daily_price: 800,
+    url_img: "https://images.unsplash.com/photo-1593351415075-3bac9f45c877?ixlib=rb-4.0.3"
+  },
+  {
+    name: "Coastal Explorer",
+    content: "Traditional sailing boat perfect for peaceful voyages",
+    location: "Seattle, WA",
+    capacity: 4,
+    size: 3,
+    daily_price: 300,
+    url_img: "https://images.unsplash.com/photo-1544140708-514b7837e6b5?ixlib=rb-4.0.3"
+  },
+  {
+    name: "Ocean King",
+    content: "Premium yacht with full amenities and crew",
+    location: "Los Angeles, CA",
+    capacity: 15,
+    size: 3,
+    daily_price: 2000,
+    url_img: "https://images.unsplash.com/photo-1570101945621-945409a6370f?ixlib=rb-4.0.3"
+  },
+  {
+    name: "Bay Cruiser",
+    content: "Ideal boat for bay tours and fishing trips",
+    location: "San Francisco, CA",
+    capacity: 6,
+    size: 3,
+    daily_price: 500,
+    url_img: "https://images.unsplash.com/photo-1605281317010-fe5ffe798166?ixlib=rb-4.0.3"
+  },
+  {
+    name: "Caribbean Dream",
+    content: "Perfect for Caribbean island hopping and snorkeling",
+    location: "Key West, FL",
+    capacity: 10,
+    size: 3,
+    daily_price: 900,
+    url_img: "https://images.unsplash.com/photo-1599134842279-fe807d23316e?ixlib=rb-4.0.3"
+  },
+  {
+    name: "Lake Master",
+    content: "Comfortable pontoon boat for lake activities",
+    location: "Lake Tahoe, NV",
+    capacity: 8,
+    size: 3,
+    daily_price: 350,
+    url_img: "https://images.unsplash.com/photo-1603026498638-5318466c3469?ixlib=rb-4.0.3"
+  },
+  {
+    name: "Harbor Light",
+    content: "Classic sailboat for harbor cruises",
+    location: "Newport, RI",
+    capacity: 4,
+    size: 3,
+    daily_price: 275,
+    url_img: "https://images.unsplash.com/photo-1540946485063-a40da27545f8?ixlib=rb-4.0.3"
+  },
+  {
+    name: "Gulf Star",
+    content: "Modern yacht with fishing equipment and sun deck",
+    location: "Tampa, FL",
+    capacity: 8,
+    size: 3,
+    daily_price: 750,
+    url_img: "https://images.unsplash.com/photo-1578592391689-0e3d1a1b48c3?ixlib=rb-4.0.3"
+  }
+]
+boats.each do |boat|
+  Boat.create!(
+    name: boat[:name],
+    content: boat[:content],
+    location: boat[:location],
+    capacity: boat[:capacity],
+    size: boat[:size],
+    daily_price: boat[:daily_price],
+    url_img: boat[:url_img]
+  )
+end
