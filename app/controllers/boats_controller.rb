@@ -5,6 +5,10 @@ class BoatsController < ApplicationController
     @boats = Boat.all
   end
 
+  def home
+    @boats = Boat.all
+  end
+
   def show
   end
 
