@@ -8,6 +8,8 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+user = User.create!(email: 'test@test.com', password: 'azerty')
+
 boats = [
   {
     name: "Sea Spirit",
@@ -16,6 +18,7 @@ boats = [
     capacity: 12,
     size: 3,
     daily_price: 1200,
+    user_id: user,
     url_img: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?ixlib=rb-4.0.3"
   },
   {
@@ -25,6 +28,7 @@ boats = [
     capacity: 6,
     size: 3,
     daily_price: 450,
+    user_id: user,
     url_img: "https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?ixlib=rb-4.0.3"
   },
   {
@@ -34,6 +38,7 @@ boats = [
     capacity: 8,
     size: 3,
     daily_price: 800,
+    user_id: user,
     url_img: "https://images.unsplash.com/photo-1593351415075-3bac9f45c877?ixlib=rb-4.0.3"
   },
   {
@@ -43,6 +48,7 @@ boats = [
     capacity: 4,
     size: 3,
     daily_price: 300,
+    user_id: user,
     url_img: "https://images.unsplash.com/photo-1544140708-514b7837e6b5?ixlib=rb-4.0.3"
   },
   {
@@ -52,6 +58,7 @@ boats = [
     capacity: 15,
     size: 3,
     daily_price: 2000,
+    user_id: user,
     url_img: "https://images.unsplash.com/photo-1570101945621-945409a6370f?ixlib=rb-4.0.3"
   },
   {
@@ -61,6 +68,7 @@ boats = [
     capacity: 6,
     size: 3,
     daily_price: 500,
+    user_id: user,
     url_img: "https://images.unsplash.com/photo-1605281317010-fe5ffe798166?ixlib=rb-4.0.3"
   },
   {
@@ -70,6 +78,7 @@ boats = [
     capacity: 10,
     size: 3,
     daily_price: 900,
+    user_id: user,
     url_img: "https://images.unsplash.com/photo-1599134842279-fe807d23316e?ixlib=rb-4.0.3"
   },
   {
@@ -79,6 +88,7 @@ boats = [
     capacity: 8,
     size: 3,
     daily_price: 350,
+    user_id: user,
     url_img: "https://images.unsplash.com/photo-1603026498638-5318466c3469?ixlib=rb-4.0.3"
   },
   {
@@ -88,6 +98,7 @@ boats = [
     capacity: 4,
     size: 3,
     daily_price: 275,
+    user_id: user,
     url_img: "https://images.unsplash.com/photo-1540946485063-a40da27545f8?ixlib=rb-4.0.3"
   },
   {
@@ -97,6 +108,7 @@ boats = [
     capacity: 8,
     size: 3,
     daily_price: 750,
+    user_id: user,
     url_img: "https://images.unsplash.com/photo-1578592391689-0e3d1a1b48c3?ixlib=rb-4.0.3"
   }
 ]
@@ -108,6 +120,7 @@ boats.each do |boat|
     capacity: boat[:capacity],
     size: boat[:size],
     daily_price: boat[:daily_price],
+    user: boat[:user_id],
     url_img: boat[:url_img]
   )
 end
