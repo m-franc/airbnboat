@@ -7,8 +7,9 @@ Rails.application.routes.draw do
   get 'reviews/edit'
   get 'reviews/update'
   get 'reviews/destroy'
-  
+
   devise_for :users
+
 
   authenticated :user do
     get 'dashboard', to: 'users#dashboard', as: :user_dashboard
