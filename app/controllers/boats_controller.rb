@@ -20,7 +20,7 @@ class BoatsController < ApplicationController
   def create
     @boat = Boat.new(boat_params)
     if @boat.save
-      redirect_to boats_path, notice: 'Boat was successfully created.'
+      redirect_to boat_path(@boat), notice: 'Boat was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end

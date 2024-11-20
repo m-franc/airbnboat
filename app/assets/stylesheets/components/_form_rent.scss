@@ -1,0 +1,59 @@
+.body-form {
+  background-color: $bleu-moyen;
+}
+
+.container-form {
+  padding: 3rem;
+  margin: 0 auto;
+
+
+}
+
+.form-rent {
+  width: 80%;
+  margin: 0 auto;
+  background-color: white;
+  padding: 3% 5% 2% 5%;
+  border-radius: 10px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.form-rent label {
+  color: $bleu-moyen;  /* Exemple de couleur bleue */
+}
+
+.form-grid {
+  display: grid; /* Utilisation de CSS Grid */
+  grid-template-columns: 1fr 1fr 1fr; /* 3 colonnes de taille égale */
+  gap: 2rem; /* Ajoute de l'espace entre les colonnes */
+}
+
+.left-form,
+.right-form,
+
+.content {
+  display: flex;
+  flex-direction: column; /* Les éléments à l'intérieur sont disposés verticalement */
+  grid-row: 1 / -1;
+  resize: none;
+}
+#boat_content{
+  height: 200%;
+  resize: none;
+}
+
+.row.d-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.simple_form input::placeholder,
+.simple_form textarea::placeholder {
+  color: $bleu-moyen; /* Remplacez cette couleur par celle que vous souhaitez */
+  opacity: 0.5; /* Opacité pleine pour les placeholders */
+  font-size: 12px;
+
+}

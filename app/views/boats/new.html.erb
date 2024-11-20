@@ -1,18 +1,40 @@
-<div class=" container m-24 p-3 w-80">
-  <h2 class="text-info">Rent My Boat</h2>
+<div class="body-form">
+<div class="container-form m-24 p-3 w-80">
 
-  <%= simple_form_for @boat do |f| %>
-    <div>
-      <%= f.input :name, placeholder: 'Enter the name of your boat'%>
-      <%= f.input :content, hint: 'Description of your offer.' %>
-      <%= f.input :location, placeholder: 'Location' %>
-      <%= f.input :capacity, placeholder: 'Capacity' %>
-      <%= f.input :size, placeholder: 'Size of the boat' %>
-      <%= f.input :daily_price, placeholder: 'Enter daily price (eg. 500)', hint: 'Must be a positive number' %>
-      <%= f.input :url_img, placeholder: 'Put image link' %>
-      <div class="row d-flex">
-        <%= f.button :submit, class:"btn justify-content-center align-items-center btn-btn-outline-success w-50"%>
+  <div class="form-rent">
+  <h2 class="text-info">Rent My Boat</h2>
+    <%= simple_form_for @boat do |f| %>
+      <div class="form-grid">
+        <!-- Colonne de droite (nom, location, capacity) -->
+        <div class="right-form">
+          <%= f.input :name, placeholder: 'Enter the name of your boat', label: 'Boat Name'%>
+         <%= f.input :location, placeholder: 'Location', label: "Location <i class='fa-solid fa-location-dot'></i>".html_safe %>
+          <%= f.input :capacity, placeholder: 'Capacity', label: "Capacity <i class='fa-regular fa-user'></i> ".html_safe %>
+          <%= f.input :daily_price, placeholder: 'Enter daily price (eg. 500)',  label: "Daily Price €"%>
+
+        </div>
+
+        <!-- Colonne de gauche (size, daily_price, url_img) -->
+        <div class="left-form">
+          <%= f.input :size, placeholder: 'Size of the boat' %>
+         <%= f.input :url_img, placeholder: 'Put image link', label: "Boat Photo 1 <i class='fa-regular fa-image'></i> ".html_safe %>
+         <%= f.input :url_img, placeholder: 'Put image link', label: "Boat Photo 2 <i class='fa-regular fa-image'></i> ".html_safe %>
+         <%= f.input :url_img, placeholder: 'Put image link', label: "Boat Photo 3 <i class='fa-regular fa-image'></i> ".html_safe %>
+
+
+        </div>
+
+        <!-- Colonne du contenu -->
+        <div class="content">
+        <%= f.input :content, as: :text, hint: 'Description of your offer.', label: 'Boat Description <i class="fa-regular fa-pen-to-square"></i> '.html_safe %>
+        </div>
       </div>
-    </div>
-  <% end %>
+
+      <!-- Bouton centré -->
+      <div class="row d-flex">
+        <%= f.button :submit, class:"btn justify-content-center align-items-center btn-btn-outline-success w-25 mt-3" %>
+      </div>
+    <% end %>
+</div>
+  </div>
 </div>
