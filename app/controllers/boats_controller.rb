@@ -1,6 +1,6 @@
 class BoatsController < ApplicationController
   before_action :set_boat, only: [:show, :update, :destroy]
-  before_action :authenticate_user!, only: :new
+  before_action :authenticate_user!, only: [:new, :create]
 
   def index
     @boats = Boat.all
@@ -20,6 +20,7 @@ class BoatsController < ApplicationController
 
   def create
     @boat = Boat.new(boat_params)
+    @boat.user = current_user
     if @boat.save
       redirect_to boat_path(@boat), notice: 'Boat was successfully created.'
     else
