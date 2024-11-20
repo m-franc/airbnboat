@@ -1,0 +1,80 @@
+<div class="dashboard">
+  <h1>Welcome, <%= current_user.first_name || "User" %>!</h1>
+
+  <!-- Tabs Navigation -->
+  <ul class="nav nav-tabs mt-4" id="dashboard-tabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="my-bookings-tab" data-bs-toggle="tab" data-bs-target="#my-bookings" type="button" role="tab" aria-controls="my-bookings" aria-selected="true">
+        My Bookings
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="boats-bookings-tab" data-bs-toggle="tab" data-bs-target="#boats-bookings" type="button" role="tab" aria-controls="boats-bookings" aria-selected="false">
+        Bookings for My Boats
+      </button>
+    </li>
+  </ul>
+
+  <!-- Tab Content -->
+  <div class="tab-content mt-4" id="dashboard-tabs-content">
+    <!-- My Bookings Tab -->
+    <div class="tab-pane fade show active" id="my-bookings" role="tabpanel" aria-labelledby="my-bookings-tab">
+      <div class="my-bookings">
+        <h2>My Bookings</h2>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Boat</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>People</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @my_bookings.each do |booking| %>
+              <tr>
+                <td><%= booking.boat.name %></td>
+                <td><%= booking.start_date %></td>
+                <td><%= booking.end_date %></td>
+                <td><%= booking.people %></td>
+                <td><%= booking.status %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Bookings for My Boats Tab -->
+    <div class="tab-pane fade" id="boats-bookings" role="tabpanel" aria-labelledby="boats-bookings-tab">
+      <div class="boats-bookings">
+        <h2>Bookings for My Boats</h2>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Boat</th>
+              <th>User</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>People</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @boats_bookings.each do |booking| %>
+              <tr>
+                <td><%= booking.boat.name %></td>
+                <td><%= booking.user.email %></td>
+                <td><%= booking.start_date %></td>
+                <td><%= booking.end_date %></td>
+                <td><%= booking.people %></td>
+                <td><%= booking.status %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
