@@ -1,11 +1,16 @@
 .container-card {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
   justify-items: center; /* Centre chaque carte individuellement */
   margin: 0 auto; /* Centre la grille globalement */
   padding: 0 4rem;
   margin-bottom: 4em;
+
+  @media (max-width: 1500px) {
+    grid-template-columns: repeat(3, 1fr); /* Passe à 2 cartes par ligne */
+    padding: 0 ;
+  }
 
   @media (max-width: 1000px) {
     grid-template-columns: repeat(2, 1fr); /* Passe à 2 cartes par ligne */
@@ -36,10 +41,22 @@
     box-shadow: 3px 3px $jaune-fonce;
   }
 
+  .container-card a {
+    text-decoration: none !important;
+    color: inherit !important;
+  }
+
+  .container-card a:hover {
+    text-decoration: none !important;
+  }
+
+
+
   ul {
     list-style: none; /* Supprime les points des listes */
     padding: 0; /* Supprime le padding par défaut */
     margin: 0; /* Supprime la marge par défaut */
+
   }
 
   li {
