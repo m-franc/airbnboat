@@ -25,7 +25,7 @@ class BookingsController < ApplicationController
     @booking.end_date = dates[1]
 
     @booking.save!
-    redirect_to bookings_path, notice: 'La réservation a été créée avec succès.'
+    redirect_to users_dashboard_path, notice: 'La réservation a été créée avec succès.'
     # else
     #   render :new, status: :unprocessable_entity
     # end
