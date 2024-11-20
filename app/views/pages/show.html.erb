@@ -4,11 +4,13 @@
     <h1 class="display-4"><%= @boat.name %></h1>
     <p class="text-muted"><%= @boat.location %></p>
   </div>
+
   <div class="row">
     <!-- Image du bateau -->
     <div class="col-md-7">
       <%= image_tag @boat.url_img, alt: @boat.name, class: "img-fluid rounded shadow-lg" %>
     </div>
+
     <!-- Détails du bateau -->
     <div class="col-md-5">
       <div class="details-card p-4 rounded shadow">
@@ -20,11 +22,25 @@
       </div>
     </div>
   </div>
-  <!-- Section supplémentaire -->
+
+  <!-- Reviews Section -->
   <div class="row mt-5">
-    <div class="col-md-12 text-center">
-      <h3 class="text mb-4">Explorez nos autres offres</h3>
-      <%= link_to "Voir d'autres bateaux", boats_path, class: "btn btn-outline btn-lg" %>
+    <div class="col-md-7">
+      <h3 class="mb-4">Avis sur ce bateau</h3>
+      <% if @boat.reviews.any? %>
+        <% @boat.reviews.each do |review| %>
+          <div class="review-card p-4 rounded shadow mb-3">
+            <p class="mb-2"><strong>Avis :</strong> <%= review.review %></p>
+            <p class="mb-2"><strong>Note :</strong> <%= review.rating %>/5</p>
+            <p class="text-muted"><em>Posté par <%= review.user.email %> le <%= l(review.created_at, format: :short) %></em></p>
+          </div>
+        <% end %>
+      <% else %>
+        <p class="text-muted">
+          Aucun avis pour ce bateau pour le moment.
+          <%= link_to "Soyez le premier à en laisser un !", new_review_path(boat_id: @boat.id), class: "btn-link" %>
+        </p>
+      <% end %>
     </div>
   </div>
 </div>
