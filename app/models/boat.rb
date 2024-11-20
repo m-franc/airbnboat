@@ -1,5 +1,6 @@
 class Boat < ApplicationRecord
   has_many :bookings
+  has_many :reviews
   belongs_to :user
   validates :content, presence: true, length: { minimum: 1 }
   validates :name, presence: true

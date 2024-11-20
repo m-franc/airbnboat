@@ -49,7 +49,7 @@ boats = [
     size: 3,
     daily_price: 300,
     user_id: user,
-    url_img: "https://images.unsplash.com/photo-1544140708-514b7837e6b5?ixlib=rb-4.0.3"
+    url_img: "https://cdn.midjourney.com/ed1c5235-22bb-49d3-aab4-30d802bd95f5/0_3.png"
   },
   {
     name: "Ocean King",
@@ -59,7 +59,7 @@ boats = [
     size: 3,
     daily_price: 2000,
     user_id: user,
-    url_img: "https://images.unsplash.com/photo-1570101945621-945409a6370f?ixlib=rb-4.0.3"
+    url_img: "https://cdn.midjourney.com/ed1c5235-22bb-49d3-aab4-30d802bd95f5/0_2.png"
   },
   {
     name: "Bay Cruiser",
@@ -79,7 +79,7 @@ boats = [
     size: 3,
     daily_price: 900,
     user_id: user,
-    url_img: "https://images.unsplash.com/photo-1599134842279-fe807d23316e?ixlib=rb-4.0.3"
+    url_img: "https://cdn.midjourney.com/ed1c5235-22bb-49d3-aab4-30d802bd95f5/0_1.png"
   },
   {
     name: "Lake Master",
@@ -89,7 +89,7 @@ boats = [
     size: 3,
     daily_price: 350,
     user_id: user,
-    url_img: "https://images.unsplash.com/photo-1603026498638-5318466c3469?ixlib=rb-4.0.3"
+    url_img: "https://cdn.midjourney.com/ed1c5235-22bb-49d3-aab4-30d802bd95f5/0_0.png"
   },
   {
     name: "Harbor Light",
@@ -109,7 +109,7 @@ boats = [
     size: 3,
     daily_price: 750,
     user_id: user,
-    url_img: "https://images.unsplash.com/photo-1578592391689-0e3d1a1b48c3?ixlib=rb-4.0.3"
+    url_img: "https://cdn.midjourney.com/2679368b-170d-4ab4-95d8-c0e8470abc08/0_3.png"
   }
 ]
 boats.each do |boat|
