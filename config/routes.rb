@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'reviews/index'
+  get 'reviews/show'
+  get 'reviews/new'
+  get 'reviews/create'
+  get 'reviews/edit'
+  get 'reviews/update'
+  get 'reviews/destroy'
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -7,7 +14,11 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   resources :bookings
-  resources :boats
+  resources :boats do
+    resources :reviews, only: [:index, :new, :create]
+  end
+
+  resources :reviews, only: [:show, :edit, :update, :destroy]
 
   root "pages#home"
   # Defines the root path route ("/")
