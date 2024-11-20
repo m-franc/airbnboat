@@ -1,2 +1,14 @@
 <h1>Reviews#create</h1>
-<p>Find me in app/views/reviews/create.html.erb</p>
+<%= simple_form_for [@boat, @review] do |f| %>
+  <div class="form-group">
+    <%= f.input :review, as: :text, label: "Write Your Review", placeholder: "Share your experience...", input_html: { class: "form-control" } %>
+  </div>
+
+  <div class="form-group">
+    <%= f.input :rating, as: :numeric, label: "Rating (0 to 5)", placeholder: "Enter a rating (e.g., 4.5)", input_html: { step: 0.1, min: 0, max: 5, class: "form-control" } %>
+  </div>
+
+  <div class="form-group mt-3">
+    <%= f.button :submit, "Submit Review", class: "btn btn-primary" %>
+  </div>
+<% end %>
