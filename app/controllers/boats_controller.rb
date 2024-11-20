@@ -1,5 +1,6 @@
 class BoatsController < ApplicationController
   before_action :set_boat, only: [:show, :update, :destroy]
+  before_action :authenticate_user!, only: :new
 
   def index
     @boats = Boat.all
