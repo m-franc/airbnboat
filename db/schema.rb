@@ -28,7 +28,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_20_115558) do
     t.string "url_img"
     t.string "url_img_two"
     t.string "url_img_three"
-    t.index ["user_id"], name: "index_boats_on_user_id"
   end
 
   create_table "bookings", force: :cascade do |t|
@@ -70,7 +69,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_20_115558) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "boats", "users"
   add_foreign_key "bookings", "boats"
   add_foreign_key "bookings", "users"
   add_foreign_key "reviews", "boats"
