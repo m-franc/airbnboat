@@ -53,8 +53,8 @@
     background-color: $jaune-fonce;
     color: $bleu-moyen;
     border-color: $bleu-moyen;
-    box-shadow: 5px 5px 0 $bleu-moyen;
-    transition: box-shadow 0.3s ease;
+
+
   }
 }
 #home {
@@ -123,19 +123,45 @@
 .profile {
   color: $bleu-moyen;
   margin-right: 30px;
-  height: 35px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 30px;
-  padding-right: 10px;
+  height: 40px;
+  width: 40px;
   border: 1px solid;
   border-color: $bleu-moyen;
-  border-radius: 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;  // Permet à l'image de ne pas déborder du cercle
 
   &:hover {
     box-shadow: 5px 5px 0 $jaune-fonce;
     transition: box-shadow 0.3s ease;
   }
+
+  // Styles pour l'image
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  // Assure que l'image remplisse le cercle sans être déformée
+  }
+}
+
+.dd_profile .dropdown-menu {
+  margin-top: 5px;
+  left: auto; /* Déplace le menu à gauche pour s'assurer qu'il ne déborde pas */
+  right: 0;
+
+}
+/* Supprimer la flèche générée par Bootstrap */
+.nav-link::after {
+  content: none !important;
+}
+
+/* Supprimer les styles de liste (points, etc.) */
+.list-unstyled {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 
@@ -180,5 +206,47 @@
     display: block !important; /* Affiche le menu quand il est activé */
   }
 }
+
+}
+
+.btn-signUp, .btn-signIn {
+  display: inline-block; /* Affiche les boutons côte à côte */
+  margin-right: 10px; /* Ajoute de l'espace entre les boutons */
+}
+.btn-signUp {
+  border: solid 2px;
+  background-color: $bleu-moyen;
+  border-color: $bleu-moyen;
+  border-radius: 4px;
+  color: $jaune-fonce;
+  font-size: 15px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 6px;
+  padding-right: 8px;
+  text-decoration: none;
+
+  &:hover{
+    background-color: #f8f9fa;
+  }
+}
+
+.btn-signIn {
+  border: solid 2px;
+    border-color: $bleu-moyen;
+    border-radius: 4px;
+    color: $bleu-moyen;
+    font-size: 15px;
+    padding-top: 3px;
+    padding-bottom: 3px;;
+    text-decoration: none;
+    padding-left: 6px;
+    padding-right: 8px;
+
+    &:hover {
+      color: $jaune-fonce;
+      border-color: $jaune-fonce;
+
+    }
 
 }
