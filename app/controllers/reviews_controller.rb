@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:show, :edit, :update, :destroy]
-  before_action :set_boat, only: [:index, :new, :create] # For nested routes
+  before_action :set_boat, only: [:index, :new, :create, :show] # For nested routes
 
   # GET /reviews
   # GET /boats/:boat_id/reviews (if nested)

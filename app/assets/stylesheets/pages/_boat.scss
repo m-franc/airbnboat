@@ -32,6 +32,15 @@
     }
   }
 
+  .img-fluid {
+    margin-bottom: 15px;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
   .host-card {
     background-color: #f9f9f9;
     border: 1px solid $bleu-moyen;
