@@ -5,8 +5,6 @@
 .container-form {
   padding: 3rem;
   margin: 0 auto;
-
-
 }
 
 .form-rent {
@@ -15,7 +13,6 @@
   background-color: white;
   padding: 3% 5% 2% 5%;
   border-radius: 10px;
-
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
@@ -27,27 +24,56 @@
   display: grid; /* Utilisation de CSS Grid */
   grid-template-columns: 1fr 1fr 1fr; /* 3 colonnes de taille égale */
   gap: 2rem; /* Ajoute de l'espace entre les colonnes */
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr 1fr; /* Pour les écrans plus petits, 2 colonnes */
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr; /* Sur les écrans très petits (ex. mobile), 1 colonne */
+  }
 }
 
 .left-form,
 .right-form,
-
 .content {
   display: flex;
   flex-direction: column; /* Les éléments à l'intérieur sont disposés verticalement */
-  grid-row: 1 / -1;
-  resize: none;
 }
-#boat_content{
+
+/* Déplacer le contenu en bas uniquement pour les écrans < 600px */
+@media (max-width: 900px) {
+  .form-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content {
+    margin-top: 20px; /* Espace entre les sections */
+    order: 99; /* Place .content à la fin du formulaire */
+  }
+
+  #boat_content {
+    height: auto; /* Ajuste la hauteur de .content automatiquement */
+  }
+
+  /* Rendre les champs de saisie plus larges */
+  .form-rent input,
+  .form-rent textarea {
+    width: 70%; /* Remplir toute la largeur disponible */
+    padding: 12px; /* Un peu de padding pour rendre les inputs plus confortables */
+    box-sizing: border-box; /* Prendre en compte le padding dans la largeur totale */
+  }
+}
+
+#boat_content {
   height: 200%;
-  resize: none;
 }
 
 .row.d-flex {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .simple_form input::placeholder,
@@ -55,5 +81,4 @@
   color: $bleu-moyen; /* Remplacez cette couleur par celle que vous souhaitez */
   opacity: 0.5; /* Opacité pleine pour les placeholders */
   font-size: 12px;
-
 }
