@@ -36,7 +36,10 @@
           </div>
         <% end %>
       <% else %>
-        <p class="text-muted">Aucun avis pour ce bateau pour le moment. Soyez le premier à en laisser un !</p>
+        <p class="text-muted">
+          Aucun avis pour ce bateau pour le moment.
+          <%= link_to "Soyez le premier à en laisser un !", new_review_path(boat_id: @boat.id), class: "btn-link" %>
+        </p>
       <% end %>
     </div>
   </div>
