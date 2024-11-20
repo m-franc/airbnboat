@@ -23,6 +23,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_20_125623) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.bigint "user_id", null: false
     t.string "url_img"
     t.string "url_img_two"
     t.string "url_img_three"
@@ -45,8 +46,10 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_20_125623) do
     t.float "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
     t.bigint "boat_id", null: false
     t.index ["boat_id"], name: "index_reviews_on_boat_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -68,4 +71,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_11_20_125623) do
   add_foreign_key "bookings", "boats"
   add_foreign_key "bookings", "users"
   add_foreign_key "reviews", "boats"
+<<<<<<< HEAD
+=======
+  add_foreign_key "reviews", "users"
+>>>>>>> e30d5d684e584d43c45ccebde6401acebd4a7dee
 end
