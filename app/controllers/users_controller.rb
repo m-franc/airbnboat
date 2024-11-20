@@ -8,4 +8,6 @@ class UsersController < ApplicationController
     # Bookings made on the user's boats
     @boats_bookings = Booking.includes(:user, :boat).where(boat: current_user.boats)
   end
+
+  
 end

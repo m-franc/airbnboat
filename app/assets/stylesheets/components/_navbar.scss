@@ -50,8 +50,8 @@
   margin-right: 4px;
 
   &:hover {
-    background-color: $jaune-fonce;
-    color: $bleu-moyen;
+    background-color: $bleu-fonce;
+
     border-color: $bleu-moyen;
 
 
@@ -147,11 +147,14 @@
 }
 
 .dd_profile .dropdown-menu {
-  margin-top: 5px;
+  margin-top: 1px;
   left: auto; /* Déplace le menu à gauche pour s'assurer qu'il ne déborde pas */
   right: 0;
-
 }
+
+
+
+
 /* Supprimer la flèche générée par Bootstrap */
 .nav-link::after {
   content: none !important;
@@ -217,24 +220,24 @@
   border: solid 2px;
   background-color: $bleu-moyen;
   border-color: $bleu-moyen;
-  border-radius: 4px;
-  color: $jaune-fonce;
+  border-radius: 20px;
+  color: white;
   font-size: 15px;
   padding-top: 3px;
   padding-bottom: 3px;
-  padding-left: 6px;
+  padding-left: 8px;
   padding-right: 8px;
   text-decoration: none;
 
   &:hover{
     background-color: #f8f9fa;
+    color: $bleu-moyen;
   }
 }
 
 .btn-signIn {
-  border: solid 2px;
-    border-color: $bleu-moyen;
-    border-radius: 4px;
+
+
     color: $bleu-moyen;
     font-size: 15px;
     padding-top: 3px;
