@@ -43,7 +43,7 @@
       </div>
     </div>
 
-    <!-- My Bookings Section -->
+        <!-- My Bookings Section -->
     <div class="tab-pane fade" id="bookings" role="tabpanel" aria-labelledby="bookings-tab">
       <h2 class="text-secondary mb-4">My Bookings</h2>
       <% if @my_bookings.present? %>
@@ -55,6 +55,7 @@
               <th class="text-secondary">End Date</th>
               <th class="text-secondary">Total Price</th>
               <th class="text-secondary"># Passengers</th>
+              <th class="text-secondary">Status</th> <!-- New Column -->
               <th class="text-secondary">View Boat</th>
             </tr>
           </thead>
@@ -66,6 +67,15 @@
                 <td class="text-primary"><%= booking.end_date %></td>
                 <td class="text-primary"><%= booking.total_price %> €</td>
                 <td class="text-primary"><%= booking.people %></td>
+                <td class="text-primary">
+                  <% if Date.today < Date.parse(booking.start_date) %>
+                    <span class="badge bg-success">Incoming</span>
+                  <% elsif Date.today <= Date.parse(booking.end_date) %>
+                    <span class="badge bg-info">Ongoing</span>
+                  <% else %>
+                    <span class="badge bg-grey">Passed</span>
+                  <% end %>
+                </td>
                 <td>
                   <%= link_to "View", boat_path(booking.boat), class: "btn btn-outline-secondary btn-sm" %>
                 </td>
@@ -91,6 +101,7 @@
               <th class="text-secondary">End Date</th>
               <th class="text-secondary">Total Price</th>
               <th class="text-secondary"># Passengers</th>
+              <th class="text-secondary">Status</th> <!-
               <th class="text-secondary">View Boat</th>
             </tr>
           </thead>
@@ -102,7 +113,15 @@
                 <td class="text-primary"><%= booking.start_date %></td>
                 <td class="text-primary"><%= booking.end_date %></td>
                 <td class="text-primary"><%= booking.total_price %> €</td>
-                <td class="text-primary"><%= booking.people %></td>
+                <td class="text-primary">
+                  <% if Date.today < Date.parse(booking.start_date) %>
+                    <span class="badge bg-success">Incoming</span>
+                  <% elsif Date.today <= Date.parse(booking.end_date) %>
+                    <span class="badge bg-info">Ongoing</span>
+                  <% else %>
+                    <span class="badge bg-grey">Passed</span>
+                  <% end %>
+                </td>
                 <td>
                   <%= link_to "View", boat_path(booking.boat), class: "btn btn-outline-secondary btn-sm" %>
                 </td>
