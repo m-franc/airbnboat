@@ -1,24 +1,29 @@
-<div class="d-flex">
-  <!-- Sidebar -->
-  <div class="sidebar bg-light shadow-sm p-3">
-    <h3 class="text-center text-info mb-4">Dashboard</h3>
-    <ul class="nav flex-column">
-      <li class="nav-item mb-3">
-        <%= link_to "Profile Details", "#profile-details", class: "nav-link text-secondary fw-bold" %>
-      </li>
-      <li class="nav-item mb-3">
-        <%= link_to "My Bookings", "#my-bookings", class: "nav-link text-secondary fw-bold" %>
-      </li>
-      <li class="nav-item mb-3">
-        <%= link_to "Bookings of My Boats", "#bookings-of-my-boats", class: "nav-link text-secondary fw-bold" %>
-      </li>
-    </ul>
-  </div>
+<div class="container mt-4">
+  <h1 class="text-center text-info mb-4">Dashboard</h1>
 
-  <!-- Main Content -->
-  <div class="content-container flex-grow-1 p-4">
+  <!-- Tabs Navigation -->
+  <ul class="nav nav-tabs" id="dashboardTabs" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="true">
+        Profile Details
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="bookings-tab" data-bs-toggle="tab" data-bs-target="#bookings" type="button" role="tab" aria-controls="bookings" aria-selected="false">
+        My Bookings
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="boat-bookings-tab" data-bs-toggle="tab" data-bs-target="#boat-bookings" type="button" role="tab" aria-controls="boat-bookings" aria-selected="false">
+        Bookings of My Boats
+      </button>
+    </li>
+  </ul>
+
+  <!-- Tabs Content -->
+  <div class="tab-content mt-4" id="dashboardTabsContent">
     <!-- Profile Details Section -->
-    <section id="profile-details" class="mb-5">
+    <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
       <h2 class="text-secondary mb-4">Profile Details</h2>
       <div class="d-flex align-items-center mb-4">
         <% if current_user.photo_profil.present? %>
@@ -36,10 +41,10 @@
           <%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-outline-secondary btn-sm mt-3" %>
         </div>
       </div>
-    </section>
+    </div>
 
     <!-- My Bookings Section -->
-    <section id="my-bookings" class="mb-5">
+    <div class="tab-pane fade" id="bookings" role="tabpanel" aria-labelledby="bookings-tab">
       <h2 class="text-secondary mb-4">My Bookings</h2>
       <% if @my_bookings.present? %>
         <table class="table table-striped">
@@ -71,10 +76,10 @@
       <% else %>
         <p class="text-muted">You have no bookings yet.</p>
       <% end %>
-    </section>
+    </div>
 
     <!-- Bookings of My Boats Section -->
-    <section id="bookings-of-my-boats" class="mb-5">
+    <div class="tab-pane fade" id="boat-bookings" role="tabpanel" aria-labelledby="boat-bookings-tab">
       <h2 class="text-secondary mb-4">Bookings of My Boats</h2>
       <% if @my_boat_bookings.present? %>
         <table class="table table-striped">
@@ -83,7 +88,7 @@
               <th class="text-secondary">Boat</th>
               <th class="text-secondary">User</th>
               <th class="text-secondary">Start Date</th>
-              <th class="text-secondary">Start Date</th>
+              <th class="text-secondary">End Date</th>
               <th class="text-secondary">Price per day</th>
               <th class="text-secondary"># Passengers</th>
               <th class="text-secondary">View Boat</th>
@@ -108,6 +113,6 @@
       <% else %>
         <p class="text-muted">No bookings for your boats yet.</p>
       <% end %>
-    </section>
+    </div>
   </div>
 </div>
