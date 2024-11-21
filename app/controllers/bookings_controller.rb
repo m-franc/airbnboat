@@ -14,6 +14,8 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     @boat = Boat.find(params[:boat_id])
+    bookings_dates = @boat.bookings.pluck(:start_date, :end_date)
+    @flatpickr_options = bookings_dates.map { |booking| { from: booking[0], to: booking[1] } }
   end
 
   # POST /bookings
@@ -21,6 +23,8 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     dates = params["booking"]["start_date"].split("to").map(&:strip)
+
+    raise
     @booking.start_date = dates[0]
     @booking.end_date = dates[1]
     @booking.boat = Boat.find(params[:boat_id])
