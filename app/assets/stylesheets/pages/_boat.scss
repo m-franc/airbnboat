@@ -1,101 +1,114 @@
-.boat-details {
-  margin-top: 50px;
+.boat-page {
+  overflow-x: hidden; /* Supprime le défilement horizontal */
 
-  h1 {
-    color: $bleu-fonce;
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
+  .boat-header {
+    background-color: $bleu-fonce;
+    color: $background-white;
+    padding: 30px 15px;
 
-  .rounded {
-    border-radius: 15px;
-  }
-
-  .details-card {
-    background-color: #fff;
-    border: 1px solid $bleu-fonce;
-    color: $bleu-moyen;
-
-    p {
-      font-size: 1rem;
-      color: $bleu-fonce;
+    h1 {
+      color: $background-white;
     }
 
-    .btn-success {
-      background-color: $bleu-clair;
-      border-color: $bleu-moyen;
+    p.text-mutedport {
+      color: $jaune-fonce;
+    }
 
-      &:hover {
-        background-color: $bleu-moyen;
-        border-color: $bleu-clair;
+    .img-fluid {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      border: 1px solid $bleu-fonce;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .details-card {
+      background-color: #fff;
+      border: 1px solid $bleu-fonce;
+      color: $bleu-moyen;
+      padding: 20px;
+      border-radius: 10px;
+
+      p {
+        font-size: 1rem;
+        color: $bleu-fonce;
+      }
+
+      .btn-success {
+        background-color: $bleu-clair;
+        border-color: $bleu-moyen;
+
+        &:hover {
+          background-color: $bleu-moyen;
+          border-color: $bleu-clair;
+        }
       }
     }
   }
 
-  .img-fluid {
-    margin-bottom: 15px;
-    transition: transform 0.2s ease-in-out;
+  .comreviews {
+    margin-top: 40px;
+    margin-bottom: 60px;
 
-    &:hover {
-      transform: scale(1.05);
-    }
-  }
+    .review-card {
+      background-color: #fff;
+      border: 1px solid $bleu-moyen;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
-  .host-card {
-    background-color: #f9f9f9;
-    border: 1px solid $bleu-moyen;
-
-    .host-avatar {
-      width: 60px;
-      height: 60px;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+      p {
+        margin-bottom: 10px;
+        font-size: 1rem;
       }
-    }
 
-    .host-username {
-      color: $bleu-fonce;
-      font-weight: bold;
-      text-decoration: none;
-
-      &:hover {
-        text-decoration: underline;
+      strong {
         color: $bleu-moyen;
       }
-    }
 
-    .rating {
-      margin: 0;
-      color: $bleu-fonce;
-      font-size: 0.9rem;
-
-      i {
-        margin-right: 5px;
+      em {
+        font-size: 0.9rem;
+        color: grey;
       }
     }
-  }
 
-  .btn-outline {
-    margin-bottom: 30px;
-    border-color: $bleu-fonce;
-    color: $bleu-fonce;
+    form {
+      background-color: #fff;
+      border: 1px solid $bleu-moyen;
+      border-radius: 10px;
+      padding: 20px;
 
-    &:hover {
-      background-color: $bleu-fonce;
-      color: #fff;
+      .review-textarea {
+        height: 300px; /* Fixe la hauteur */
+        width: 650px;
+        resize: none; /* Empêche le redimensionnement */
+      }
+
+      .rating-input {
+        width: 100%; /* Note moins large */
+        margin-bottom: 10px; /* Espacement avant le bouton */
+      }
+
+      .btn-small {
+        width: auto; /* Bouton plus petit */
+        padding: 5px 15px; /* Ajuste la taille */
+      }
+
+      .form-row {
+        display: flex;
+        justify-content: space-between;
+
+        .form-group {
+          flex: 1;
+
+          &.flex-grow-1 {
+            flex: 4; /* La zone texte prend 80% de l'espace */
+          }
+
+          &.d-flex {
+            flex: 1; /* La partie note et bouton prend 20% */
+          }
+        }
+      }
     }
-  }
-
-  img {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    border: 1px solid $bleu-fonce;
-  }
-
-  .text-muted {
-    font-size: 1.1rem;
-    color: $bleu-moyen;
   }
 }

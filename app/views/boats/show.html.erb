@@ -1,43 +1,75 @@
-<div class="boat-details container mt-5">
-  <!-- Titre principal -->
-  <div class="text-center mb-4">
-    <h1 class="display-4"><%= @boat.name %></h1>
-    <p class="text-muted"><%= @boat.location %></p>
-  </div>
+<div class="boat-page">
+  <!-- Section supérieure -->
+  <div class="boat-header">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h1 class="display-4"><%= @boat.name %></h1>
+        <p class="text-mutedport"><%= @boat.location %></p>
+      </div>
 
-  <div class="row">
-    <!-- Image du bateau -->
-    <div class="col-md-7">
-      <%= image_tag @boat.url_img, alt: @boat.name, class: "img-fluid rounded shadow-lg" %>
-    </div>
+      <div class="row">
+        <!-- Image du bateau -->
+        <div class="col-md-7">
+          <%= image_tag @boat.url_img, alt: @boat.name, class: "img-fluid rounded shadow-lg" %>
+        </div>
 
-    <!-- Détails du bateau -->
-    <div class="col-md-5">
-      <div class="details-card p-4 rounded shadow">
-        <p class="mb-3"><strong>Capacité :</strong> <%= @boat.capacity %> personnes</p>
-        <p class="mb-3"><strong>Taille :</strong> <%= @boat.size %> mètres</p>
-        <p class="mb-3"><strong>Description :</strong> <%= @boat.content %></p>
-        <p class="mb-3"><strong>Prix :</strong> <%= number_to_currency(@boat.daily_price, unit: "€", format: "%n %u") %> / jour</p>
-        <%= link_to "Réserver ce bateau", new_booking_path(boat_id: @boat.id), class: "btn btn-success btn-lg btn-block mt-4" %>
+        <!-- Détails du bateau -->
+        <div class="col-md-5">
+          <div class="details-card p-4 rounded shadow">
+            <p class="mb-3"><strong>Capacité :</strong> <%= @boat.capacity %> personnes</p>
+            <p class="mb-3"><strong>Taille :</strong> <%= @boat.size %> mètres</p>
+            <p class="mb-3"><strong>Description :</strong> <%= @boat.content %></p>
+            <p class="mb-3"><strong>Prix :</strong> <%= number_to_currency(@boat.daily_price, unit: "€", format: "%n %u") %> / jour</p>
+            <%= link_to "Réserver ce bateau", new_booking_path(boat_id: @boat.id), class: "btn btn-success btn-lg btn-block mt-4" %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Reviews Section -->
-  <div class="row mt-5">
-    <div class="col-md-12">
-      <h3 class="mb-4">Avis des utilisateurs</h3>
-      <% if @boat.reviews.any? %>
-        <% @boat.reviews.each do |review| %>
-          <div class="review-card p-4 rounded shadow mb-3">
-            <p class="mb-2"><strong>Avis :</strong> <%= review.review %></p>
-            <p class="mb-2"><strong>Note :</strong> <%= review.rating %>/5</p>
-            <p class="text-muted"><em>Posté par <%= review.user.email %> le <%= l(review.created_at, format: :short) %></em></p>
+  <!-- Section des avis et du formulaire -->
+  <div class="comreviews container mt-5 mb-5">
+    <!-- Avis des utilisateurs -->
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="mb-4">Avis des utilisateurs</h3>
+        <div id="reviews" class="row">
+          <% if @boat.reviews.any? %>
+            <% @boat.reviews.each do |review| %>
+              <div class="col-md-6 mb-4">
+                <div class="review-card p-4 rounded shadow">
+                  <p class="mb-2"><strong>Avis :</strong> <%= review.review %></p>
+                  <p class="mb-2"><strong>Note :</strong> <%= review.rating %>/5</p>
+                  <p class="text-mutedport"><em>Posté par <%= review.user.email %> le <%= l(review.created_at, format: :short) %></em></p>
+                </div>
+              </div>
+            <% end %>
+          <% else %>
+            <p class="text-mutedport">Aucun avis pour ce bateau pour le moment. Soyez le premier à en laisser un !</p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <!-- Formulaire pour ajouter un avis -->
+    <div class="row mt-5">
+      <div class="col-md-12">
+        <h3>Laissez un commentaire</h3>
+        <%= simple_form_for([@boat, @boat.reviews.new]) do |f| %>
+          <div class="form-row d-flex">
+            <!-- Zone de texte -->
+            <div class="form-group flex-grow-1 me-4" style="flex: 4;">
+              <%= f.input :review, as: :text, label: "Votre avis", input_html: { class: "form-control review-textarea", placeholder: "Écrivez votre commentaire ici..." } %>
+            </div>
+
+            <!-- Note et bouton -->
+            <div class="form-group d-flex flex-column justify-content-start align-items-stretch" style="flex: 1;">
+              <%= f.input :rating, as: :numeric, label: "Note (0 à 5)", input_html: { class: "form-control rating-input", min: 0, max: 5, step: 0.5 } %>
+              <%= f.button :submit, "Envoyer", class: "btn btn-primary mt-3 btn-small" %>
+            </div>
           </div>
         <% end %>
-      <% else %>
-        <p class="text-muted">Aucun avis pour ce bateau pour le moment. Soyez le premier à en laisser un !</p>
-      <% end %>
+      </div>
     </div>
   </div>
 </div>
