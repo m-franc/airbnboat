@@ -17,31 +17,33 @@
 }
 
 
-#home {
-  color: $bleu-moyen;
 
-  &:hover{
-    color: $bleu-clair;
-  }
-}
-
-#rent {
+.menu {
   color: $jaune-fonce;
+  font-size: 20px;
+  margin-left: 400px;
 
-  &:hover{
-    color: $bleu-fonce;
-    font-weight: bold;
-  }
-}
-
-/* Style pour #categories au survol */
-#categories {
-  color: $bleu-moyen;
-  transition: color 0.3s ease; /* Ajout d'une transition douce pour la couleur */
   &:hover {
-    color: $bleu-clair;
+    color: $bleu-fonce;
   }
 }
+
+@media (max-width: 1100px) {
+  .menu {
+    margin-left: 250px; /* Réduction de la marge */
+  }
+  @media (max-width: 800px) {
+    .menu {
+      margin-left: 100px; /* Réduction de la marge */
+    }
+  }
+  @media (max-width: 550px) {
+    .menu {
+      margin-left: 10px; /* Réduction de la marge */
+    }
+  }
+}
+
 
 /* Cache le menu par défaut */
 .dropdown-menu {
@@ -107,10 +109,14 @@
   }
 }
 
+
+
 .dd_profile .dropdown-menu {
-  margin-top: 1px;
-  left: auto; /* Déplace le menu à gauche pour s'assurer qu'il ne déborde pas */
-  right: 0;
+
+    margin-top: 1px;
+    left: auto;
+    right: 20px !important; /* Force le décalage */
+
 }
 
 
@@ -131,9 +137,7 @@
 
 
 
-.menu {
-  justify-content: center;
-}
+
 
 .bleu-moyen{
   color: $bleu-moyen;
