@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
   # GET /bookings/new
   def new
     @booking = Booking.new
-    @boats = Boat.all
+    @boat = Boat.find(params[:boat_id])
   end
 
   # POST /bookings
@@ -23,12 +23,12 @@ class BookingsController < ApplicationController
     dates = params["booking"]["start_date"].split("to").map(&:strip)
     @booking.start_date = dates[0]
     @booking.end_date = dates[1]
-
-    @booking.save!
-    redirect_to user_dashboard_path, notice: 'La réservation a été créée avec succès.'
-    # else
-    #   render :new, status: :unprocessable_entity
-    # end
+    @booking.boat = Boat.find(params[:boat_id])
+    if @booking.save!
+      redirect_to user_dashboard_path, notice: 'Booking was succesfully created.'
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   # GET /bookings/1/edit
@@ -56,6 +56,10 @@ class BookingsController < ApplicationController
   def set_booking
     @booking = Booking.find(params[:id])
   end
+
+  # def set_boat
+  #   @boat = Boat.find(params[:boat_id])
+  # end
 
   # Méthode pour filtrer les paramètres autorisés
   def booking_params
