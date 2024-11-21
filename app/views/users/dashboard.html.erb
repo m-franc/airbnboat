@@ -1,6 +1,6 @@
 <div class="d-flex">
   <!-- Sidebar -->
-  <div class="sidebar bg-light shadow-sm p-3" style="width: 250px; min-height: 100vh; position: fixed; top: 0; left: 0; overflow-y: auto;">
+  <div class="sidebar bg-light shadow-sm p-3">
     <h3 class="text-center text-info mb-4">Dashboard</h3>
     <ul class="nav flex-column">
       <li class="nav-item mb-3">
@@ -12,17 +12,11 @@
       <li class="nav-item mb-3">
         <%= link_to "Bookings of My Boats", "#bookings-of-my-boats", class: "nav-link text-secondary fw-bold" %>
       </li>
-      <li class="nav-item mt-5">
-        <%= link_to "Logout", destroy_user_session_path,
-                     method: :delete,
-                     data: { confirm: "Are you sure you want to log out?" },
-                     class: "btn btn-outline-info w-100" %>
-      </li>
     </ul>
   </div>
 
   <!-- Main Content -->
-  <div class="content-container flex-grow-1 p-4" style="margin-left: 250px;">
+  <div class="content-container flex-grow-1 p-4">
     <!-- Profile Details Section -->
     <section id="profile-details" class="mb-5">
       <h2 class="text-secondary mb-4">Profile Details</h2>
@@ -65,7 +59,7 @@
                 <td class="text-primary"><%= booking.boat.name %></td>
                 <td class="text-primary"><%= booking.start_date %></td>
                 <td class="text-primary"><%= booking.end_date %></td>
-                <td class="text-primary"><%= booking.boat.daily_price%> €</td>
+                <td class="text-primary"><%= booking.boat.daily_price %> €</td>
                 <td class="text-primary"><%= booking.people %></td>
                 <td>
                   <%= link_to "View", boat_path(booking.boat), class: "btn btn-outline-secondary btn-sm" %>
@@ -86,20 +80,24 @@
         <table class="table table-striped">
           <thead>
             <tr>
-              <th>Boat</th>
-              <th>User</th>
-              <th>Date</th>
-              <th>Price</th>
-              <th>Actions</th>
+              <th class="text-secondary">Boat</th>
+              <th class="text-secondary">User</th>
+              <th class="text-secondary">Start Date</th>
+              <th class="text-secondary">Start Date</th>
+              <th class="text-secondary">Price per day</th>
+              <th class="text-secondary"># Passengers</th>
+              <th class="text-secondary">View Boat</th>
             </tr>
           </thead>
           <tbody>
             <% @my_boat_bookings.each do |booking| %>
               <tr>
-                <td><%= booking.boat.name %></td>
-                <td><%= booking.user.email %></td>
-                <td><%= booking.created_at.strftime("%B %d, %Y") %></td>
-                <td>€<%= booking.boat.daily_price %></td>
+                <td class="text-primary"><%= booking.boat.name %></td>
+                <td class="text-primary"><%= booking.user.email %></td>
+                <td class="text-primary"><%= booking.start_date %></td>
+                <td class="text-primary"><%= booking.end_date %></td>
+                <td class="text-primary">€<%= booking.boat.daily_price %></td>
+                <td class="text-primary"><%= booking.people %></td>
                 <td>
                   <%= link_to "View", boat_path(booking.boat), class: "btn btn-outline-secondary btn-sm" %>
                 </td>
