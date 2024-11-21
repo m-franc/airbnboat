@@ -25,6 +25,7 @@ class ReviewsController < ApplicationController
   def create
     @review = @boat.reviews.build(review_params)
     @review.user = current_user # Assign the current user if logged in
+    
     if @review.save
       redirect_to boat_path(@boat), notice: 'Review was successfully created.'
     else
