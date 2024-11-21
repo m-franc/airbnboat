@@ -52,7 +52,7 @@
     </div>
 
     <!-- Formulaire pour ajouter un avis -->
-    <div class="row mt-5">
+    <div class="row mt-5 <%= "d-none" unless user_signed_in? %>">
       <div class="col-md-12">
         <h3>Laissez un commentaire</h3>
         <%= simple_form_for([@boat, @boat.reviews.new]) do |f| %>

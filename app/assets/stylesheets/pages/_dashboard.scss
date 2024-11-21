@@ -6,3 +6,31 @@
 .table {
   margin-top: 20px;
 }
+
+.sidebar {
+  position: fixed;
+  width: 250px;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+.content-container {
+  margin-left: 250px;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+  }
+  .content-container {
+    margin-left: 0;
+  }
+}
