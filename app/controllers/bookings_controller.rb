@@ -27,6 +27,8 @@ class BookingsController < ApplicationController
     @booking.start_date = dates[0]
     @booking.end_date = dates[1]
     @booking.boat = Boat.find(params[:boat_id])
+    tripday = (@booking.end_date.to_time.day - @booking.start_date.to_time.day).to_i
+    @booking.total_price = tripday * @booking.boat.daily_price
     if @booking.save!
       redirect_to user_dashboard_path, notice: 'Booking was succesfully created.'
     else
