@@ -12,9 +12,54 @@
   margin: 0 auto;
   background-color: white;
   padding: 3% 5% 2% 5%;
-  border-radius: 10px;
+  border-radius: 1  px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+
+  input {
+    height: 33px;
+    border-radius: 10px;
+    border-color: $bleu-moyen;
+
+    &:focus {
+
+      border-color: $jaune-fonce;
+      box-shadow: 5px 5px 0 $jaune-fonce;
+      transition: box-shadow 0.3s ease;
+
+    }
+  }
+
+  #boat_content {
+    height: 33px;
+    border-radius: 10px;
+    border-color: $bleu-moyen;
+    height: 200%;
+
+    &:focus {
+
+      border-color: $jaune-fonce;
+      box-shadow: 5px 5px 0 $jaune-fonce;
+      transition: box-shadow 0.3s ease;
+
+    }
+  }
+
+  input[type="submit"] {
+    background: $bleu-moyen;
+    color: $jaune-fonce;
+    text-align: center;
+    align-items: center;
+    padding-bottom: 5px;
+    padding-top: 5px;
+
+    &:hover {
+      box-shadow: 5px 5px 0 $jaune-fonce;
+      transition: box-shadow 0.3s ease;
+
+    }
+  }
 }
+
 
 .form-rent label {
   color: $bleu-moyen;  /* Exemple de couleur bleue */

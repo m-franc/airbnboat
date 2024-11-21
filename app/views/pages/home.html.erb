@@ -1,4 +1,10 @@
-<div id="banner"><%= image_tag 'BoatHeader.png' %></div>
+<div id="banner" style="position: relative;">
+  <%= image_tag 'BoatHeader.png', class: 'banner-image' %>
+
+<%= render 'pages/search_bar' %>
+</div>
+
+
 
 <div class="container-card">
   <% @boats.each do |boat| %>

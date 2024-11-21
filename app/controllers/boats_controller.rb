@@ -3,7 +3,13 @@ class BoatsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
+    if params[:query].present?
+      @boats = Boat.search_by_location_and_name(params[:query])
+    else
     @boats = Boat.all
+    end
+
+    @boat = Boat.first
   end
 
   def home
