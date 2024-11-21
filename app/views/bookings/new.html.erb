@@ -11,12 +11,15 @@
             <%= b.input :start_date, label: "Select Your Dates <i class='fa-solid fa-calendar-days'></i>".html_safe,
                                       as: :string,
                                       required: false,
-                                      input_html: { data: { controller: "datepicker", datepicker_dates_value: @dates }, placeholder: "Pick a start date" } %>
+                                      input_html: { data: { controller: "datepicker", datepicker_dates_value: @dates, datepicker_price_value: @boat.daily_price }, placeholder: "Pick a start date" } %>
           </div>
 
           <!-- Left Column -->
           <div class="left-form">
             <%= b.input :people, label: "How Many People? <i class='fa-solid fa-user-group'></i>".html_safe, placeholder: "Enter the number of people" %>             </div>
+
+        <div id="price">
+          <%= @boat.daily_price %>
         </div>
 
         <!-- Submit Button -->

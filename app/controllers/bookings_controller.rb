@@ -23,7 +23,6 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     dates = params["booking"]["start_date"].split("to").map(&:strip)
-
     @booking.start_date = dates[0]
     @booking.end_date = dates[1]
     @booking.boat = Boat.find(params[:boat_id])
