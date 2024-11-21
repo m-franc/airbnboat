@@ -12,7 +12,7 @@
   top: 70px; /* Adjust this value to match the navbar's height */
   z-index: 1;
   width: 250px;
-  min-height: calc(100vh - 70px); /* Ensure it doesn't overlap with the footer */
+  min-height: calc(100vh - 180px); /* Ensure it doesn't overlap with the footer */
   background-color: #f8f9fa;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
