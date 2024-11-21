@@ -25,7 +25,7 @@ class BookingsController < ApplicationController
     @booking.end_date = dates[1]
     @booking.boat = Boat.find(params[:boat_id])
     if @booking.save!
-      redirect_to users_dashboard_path, notice: 'Booking was succesfully created.'
+      redirect_to user_dashboard_path, notice: 'Booking was succesfully created.'
     else
       render :new, status: :unprocessable_entity
     end
