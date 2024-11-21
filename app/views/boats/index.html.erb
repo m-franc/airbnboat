@@ -1,16 +1,40 @@
-<div id="banner"><%= image_tag 'BoatHeader.png' %></div>
+<div class="search-index d-flex justify-content-center my-3">
+  <div class="search-bar-index">
+    <div class="container">
+      <form action="/boats" method="get">
+        <div class="input-group">
+          <input
+            type="text"
+            class="form-control search-bar"
+            placeholder="Search for a Peer / a Boat..."
+            name="query"
+            value="<%= params[:query] %>">
+          <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
 
-
-<div class="container">
-  <% @boats.each do |boat| %>
-    <div class="card">
-      <ul>
-        <li><img src="<%= boat.url_img %>" alt=""></li>
-        <li><h1><%= boat.name %></h1></li>
-        <li><h3><%= boat.capacity %> <i class="fa-solid fa-person"></i></h3></li>
-        <li><p><%= boat.content %></p></li>
-        <li><h2><%= boat.daily_price %> €</h2></li>
-      </ul>
+          </button>
+        </div>
+      </form>
     </div>
+  </div>
+
+</div>
+
+<div class="location-i">
+<h3>Boats close to <%= @boat.location %> <i class="fa-solid fa-anchor"></i></h3>
+</div>
+
+<div class="container-card">
+  <% @boats.each do |boat| %>
+    <%= link_to boat_path(boat), style: "text-decoration: none; color: inherit;" do %>
+      <div class="card">
+        <ul>
+          <li><img src="<%= boat.url_img %>" alt=""></li>
+          <li><h1><%= boat.name %></h1></li>
+          <li><h3><%= boat.capacity %> <i class="fa-solid fa-person"></i></h3></li>
+          <li><p><%= boat.content %></p></li>
+          <li><h2><%= boat.daily_price %> €</h2></li>
+        </ul>
+      </div>
+    <% end %>
   <% end %>
 </div>

@@ -114,3 +114,90 @@
   box-shadow: 0 2px 4px rgba(90, 90, 90, 0.4);
   margin-bottom: 2em;
 }
+.search-index {
+  /* Exemple de style pour centrer la barre de recherche */
+  text-align: center!important;
+  margin-top: 20px;
+}
+
+.search-index input {
+  width: 100%;
+  max-width: 500px; /* La largeur maximale de la barre de recherche */
+  margin: 0 auto; /* Centrer la barre de recherche */
+}
+
+
+.search-bar-container {
+  position: absolute;
+  top: 20%; /* Positionne verticalement au milieu */
+  left: 33%; /* Positionne horizontalement au milieu */
+  transform: translate(-50%, -50%); /* Ajuste pour centrer exactement */
+  width: 40%; /* Ajuste la largeur de la barre de recherche */
+  z-index: 10; /* Place la barre de recherche au-dessus de l'image */
+ ;
+}
+
+.search-bar {
+  height: 3em!important; /* Ajuste la hauteur de l'input ici */
+  border: 1px solid $jaune-fonce;
+  border-radius: 20px;
+  color: $bleu-moyen;
+  margin: 0;
+  padding: 0 10px; /* Ajoute un peu de padding pour améliorer l'ergonomie */
+
+  &:focus {
+    outline: none; /* Enlève le contour par défaut */
+    border-color: $jaune-fonce; /* Maintient la bordure de votre couleur choisie */
+    box-shadow: none;
+  }
+}
+
+.search-bar-container {
+  .input-group {
+    .btn-outline-success {
+      height: 3em; /* Ajuste la hauteur */
+      background-color: $jaune-fonce; /* Utilise la couleur définie */
+      border: 1px solid $jaune-fonce;
+      border-radius: 15px; /* Coins arrondis */
+      color: white; /* Couleur du texte */
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-left: 4px; /* Ajuste l'espacement entre le bouton et l'input */
+
+      &:hover {
+        background-color: $bleu-fonce; /* Couleur au survol */
+        border-color: $bleu-fonce; /* Couleur de la bordure au survol */
+      }
+    }
+  }
+
+}
+.search-bar-index {
+  .input-group {
+    .btn-outline-success {
+      height: 3em; /* Ajuste la hauteur */
+      background-color: $jaune-fonce; /* Utilise la couleur définie */
+      border: 1px solid $jaune-fonce;
+      border-radius: 15px; /* Coins arrondis */
+      color: white; /* Couleur du texte */
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-left: 4px; /* Ajuste l'espacement entre le bouton et l'input */
+
+      &:hover {
+        background-color: $bleu-fonce; /* Couleur au survol */
+        border-color: $bleu-fonce; /* Couleur de la bordure au survol */
+      }
+    }
+  }
+
+}
+
+
+.location-i {
+  margin: 25px!important;
+
+  h3 {
+    font-size: 20px;
+  }
+}
