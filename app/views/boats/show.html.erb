@@ -22,6 +22,8 @@
             <p class="mb-3"><strong>Prix :</strong> <%= number_to_currency(@boat.daily_price, unit: "€", format: "%n %u") %> / jour</p>
             <%= link_to "Réserver ce bateau", new_boat_booking_path(@boat), class: "btn btn-success btn-lg btn-block mt-4" %>
           </div>
+
+          
         </div>
       </div>
     </div>
