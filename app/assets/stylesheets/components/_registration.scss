@@ -1,0 +1,61 @@
+.Su h2 {
+  margin-top: 10px;
+  text-align: center;
+  color: $jaune-fonce;
+}
+
+.signUp {
+  display: flex;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+  height: 400px; /* Utiliser la hauteur de la fenêtre */
+  width: 300px; /* Largeur du formulaire */
+  background-color: $jaune-fonce; /* Couleur de fond */
+  margin: 0 auto; /* Centrer horizontalement */
+  margin-top: 15px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+
+  input {
+    border-radius: 10px;
+
+    &:focus {
+      outline: none;
+      border: solid 1px;
+      border-color: $bleu-moyen;
+      box-shadow: none;
+    }
+  }
+
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $bleu-moyen;
+  border-radius: 10px;
+  width: 100px;
+  margin: 0npx auto 10px auto;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  input.btn {
+    color: $jaune-fonce;
+  }
+}
+
+.registration-link {
+
+  text-align: center;
+  color: $bleu-moyen;
+  display: block;
+
+  &:hover {
+    text-decoration: none;
+  }
+}

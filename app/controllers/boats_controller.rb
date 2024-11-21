@@ -8,8 +8,6 @@ class BoatsController < ApplicationController
     else
     @boats = Boat.all
     end
-
-    @boat = Boat.first
   end
 
   def home
