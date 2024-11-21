@@ -18,6 +18,11 @@
         Bookings of My Boats
       </button>
     </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="my-boats-tab" data-bs-toggle="tab" data-bs-target="#my-boats" type="button" role="tab" aria-controls="my-boats" aria-selected="false">
+        My Boats
+      </button>
+    </li>
   </ul>
 
   <!-- Tabs Content -->
@@ -101,7 +106,7 @@
               <th class="text-secondary">End Date</th>
               <th class="text-secondary">Total Price</th>
               <th class="text-secondary"># Passengers</th>
-              <th class="text-secondary">Status</th> <!-
+              <th class="text-secondary">Status</th>
               <th class="text-secondary">View Boat</th>
             </tr>
           </thead>
@@ -131,6 +136,36 @@
         </table>
       <% else %>
         <p class="text-muted">No bookings for your boats yet.</p>
+      <% end %>
+    </div>
+
+<!-- My Boats Section -->
+    <div class="tab-pane fade" id="my-boats" role="tabpanel" aria-labelledby="my-boats-tab">
+      <h2 class="text-secondary mb-4">My Boats</h2>
+      <% if @my_boats.present? %>
+        <div class="row g-4">
+          <% @my_boats.each do |boat| %>
+            <div class="col-md-6 col-lg-4"> <!-- Adjusted for larger cards -->
+              <div class="card shadow-sm h-100"> <!-- Ensures all cards are equal height -->
+                <%= image_tag boat.url_img.presence || "placeholder.jpg", class: "card-img-top", alt: "#{boat.name} Image", style: "height: 250px; object-fit: cover;" %>
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title text-primary"><%= boat.name %></h5>
+                  <p class="card-text mb-3">
+                    <strong>Location:</strong> <%= boat.location %><br>
+                    <strong>Capacity:</strong> <%= boat.capacity %> people<br>
+                    <strong>Price:</strong> €<%= boat.daily_price %> per day
+                  </p>
+                  <div class="mt-auto"> <!-- Push buttons to the bottom -->
+                    <%= link_to "View Boat", boat_path(boat), class: "btn btn-outline-info btn-sm" %>
+                    <%= link_to "Edit", edit_boat_path(boat), class: "btn btn-outline-secondary btn-sm" %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      <% else %>
+        <p class="text-muted">You have no boats listed.</p>
       <% end %>
     </div>
   </div>
