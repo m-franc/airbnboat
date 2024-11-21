@@ -19,8 +19,14 @@
 
 </div>
 
+
+<% if @boats.present? %>
+
+
 <div class="location-i">
-<h3>Boats close to <%= @boat.location %> <i class="fa-solid fa-anchor"></i></h3>
+<% locations = @boats.map(&:location).uniq %>
+<h3>Boats close to <%= locations.join(", ") %> <i class="fa-solid fa-anchor"></i></h3>
+
 </div>
 
 <div class="container-card">
@@ -36,5 +42,15 @@
         </ul>
       </div>
     <% end %>
+  <% end %>
+
+  <% else  %>
+
+  <div class="error">
+  <h3>No boat a this location 😟</h3>
+
+
+  <img src="https://cdn.pixabay.com/photo/2018/04/05/14/10/boat-3292934_1280.jpg" alt="">
+  </div>
   <% end %>
 </div>
