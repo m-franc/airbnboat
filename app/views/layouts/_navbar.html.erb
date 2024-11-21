@@ -15,15 +15,15 @@
 <li class="nav-item dropdown" style="list-style: none; margin: 0; padding: 0;" >
   <% if user_signed_in? %>
     <!-- Image de profil ou par défaut avec dropdown -->
-    <div class="profile">
+  <div class="profile">
     <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      <% if current_user.photo_profil && current_user.photo_profil.attached? %>
+      <% if current_user.photo_profil.present? %>
         <%= image_tag current_user.photo_profil, alt: "Profile Picture", class: "avatar rounded-circle", width: 35, height: 35 %>
       <% else %>
         <%= image_tag "default-profile.png", alt: "Default Profile Picture", class: "avatar rounded-circle", width: 35, height: 35 %>
       <% end %>
     </a>
-</div>
+  </div>
     <!-- Menu déroulant -->
       <div class="dd_profile">
     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">

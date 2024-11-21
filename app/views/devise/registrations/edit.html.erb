@@ -9,9 +9,9 @@
         <h5>Profile Picture</h5>
         <div id="profile-image-preview" class="mb-3">
           <% if resource.photo_profil.present? %>
-            <img src="<%= resource.photo_profil %>" alt="Profile Picture" class="rounded-circle justify-content-center" style="width: 120px; height: 120px; object-fit: cover;">
+            <img id="profile-preview-img" src="<%= resource.photo_profil %>" alt="Profile Picture" class="rounded-circle justify-content-center" style="width: 120px; height: 120px; object-fit: cover;">
           <% else %>
-            <div class="rounded-circle bg-secondary d-flex justify-content-center align-items-center" style="width: 120px; height: 120px; font-size: 2rem; color: white;">
+            <div id="profile-placeholder" class="rounded-circle bg-secondary d-flex justify-content-center align-items-center" style="width: 120px; height: 120px; font-size: 2rem; color: white;">
               <%= resource.first_name&.first || "?" %>
             </div>
           <% end %>
