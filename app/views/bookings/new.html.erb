@@ -2,11 +2,12 @@
   <div class="container-form m-24 p-3 w-80">
     <div class="form-rent">
       <h2 class="text-info">Book Your Adventure</h2>
-      <%= simple_form_for @booking do |b| %>
+      <h2 class="text-info"><%= @boat.name %></h2>
+      <%= simple_form_for [@boat, @booking] do |b| %>
         <div class="form-grid">
           <!-- Right Column -->
+
           <div class="right-form">
-            <%= b.input :boat_id, collection: @boats, label: "Select a Boat <i class='fa-solid fa-ship'></i>".html_safe, placeholder: 'Choose your boat' %>
             <%= b.input :start_date, label: "Select Your Dates <i class='fa-solid fa-calendar-days'></i>".html_safe,
                                       as: :string,
                                       required: false,

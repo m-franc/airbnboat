@@ -20,7 +20,7 @@
             <p class="mb-3"><strong>Taille :</strong> <%= @boat.size %> mètres</p>
             <p class="mb-3"><strong>Description :</strong> <%= @boat.content %></p>
             <p class="mb-3"><strong>Prix :</strong> <%= number_to_currency(@boat.daily_price, unit: "€", format: "%n %u") %> / jour</p>
-            <%= link_to "Réserver ce bateau", new_booking_path(boat_id: @boat.id), class: "btn btn-success btn-lg btn-block mt-4" %>
+            <%= link_to "Réserver ce bateau", new_boat_booking_path(@boat), class: "btn btn-success btn-lg btn-block mt-4" %>
           </div>
         </div>
       </div>
