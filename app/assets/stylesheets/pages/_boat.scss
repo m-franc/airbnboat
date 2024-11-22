@@ -45,6 +45,45 @@
     }
   }
 
+  /* Section Booking */
+  .booking-card {
+    background-color: $bleu-clair;
+    border: 1px solid $bleu-moyen;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+
+    h4 {
+      color: $bleu-fonce;
+      margin-bottom: 15px;
+    }
+
+    .form-control {
+      border: 1px solid $bleu-moyen;
+      height: 50px;
+      padding: 10px 15px;
+
+      &::placeholder {
+        font-size: 15px;
+        opacity: 0.6;
+      }
+
+      &:focus {
+        box-shadow: 0 0 5px $bleu-moyen;
+      }
+    }
+
+    .btn-primary {
+      background-color: $bleu-moyen;
+      &:hover {
+        background-color: $jaune-fonce;
+        color: $bleu-moyen;
+      }
+    }
+  }
+
+  /* Section Avis et Formulaire */
   .comreviews {
     margin-top: 40px;
     margin-bottom: 60px;
@@ -78,9 +117,20 @@
       padding: 20px;
 
       .review-textarea {
-        height: 300px; /* Fixe la hauteur */
-        width: 650px;
+        border: 1px solid $bleu-moyen;
+        height: 150px; /* Ajuste la hauteur spécifique pour la zone de texte */
+        padding: 10px 15px;
         resize: none; /* Empêche le redimensionnement */
+
+        &::placeholder {
+          font-size: 15px; /* Taille du texte des placeholders */
+          color: $bleu-moyen; /* Ajuste la couleur */
+          opacity: 0.6; /* Transparence */
+        }
+
+        &:focus {
+          box-shadow: 0 0 5px $bleu-moyen; /* Ajoute un effet de focus */
+        }
       }
 
       .rating-input {
@@ -90,7 +140,17 @@
 
       .btn-small {
         width: auto; /* Bouton plus petit */
-        padding: 5px 15px; /* Ajuste la taille */
+        padding: 5px 15px;
+
+        background-color: $bleu-fonce; /* Couleur par défaut */
+        border: 1px solid $bleu-fonce;
+        color: #fff;
+
+        &:hover {
+          border: 1px solid $bleu-fonce;
+          background-color: $bleu-clair; /* Couleur au survol */
+          color: #fff;
+        }
       }
 
       .form-row {
@@ -108,6 +168,22 @@
             flex: 1; /* La partie note et bouton prend 20% */
           }
         }
+      }
+    }
+  }
+
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    .details-card,
+    .booking-card {
+      margin-bottom: 20px;
+    }
+
+    .form-row {
+      flex-direction: column;
+
+      .form-group {
+        margin-bottom: 15px;
       }
     }
   }

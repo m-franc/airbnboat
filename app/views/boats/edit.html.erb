@@ -1,0 +1,68 @@
+<div class="body-form">
+  <div class="container-form m-auto p-4 shadow-lg rounded w-80 bg-light">
+    <h2 class="text-center text-info mb-4">Edit Your Boat</h2>
+    <%= simple_form_for @boat, html: { class: "needs-validation" } do |f| %>
+      <div class="form-grid">
+        <!-- Right Column (Name, Location, Capacity, Daily Price) -->
+        <div class="right-form">
+          <%= f.input :name,
+                      placeholder: 'Enter the name of your boat',
+                      label: 'Boat Name',
+                      input_html: { class: "form-control" } %>
+          <%= f.input :location,
+                      placeholder: 'Location',
+                      label: "Location <i class='fa-solid fa-location-dot'></i>".html_safe,
+                      input_html: { class: "form-control" } %>
+          <%= f.input :capacity,
+                      placeholder: 'Capacity',
+                      label: "Capacity <i class='fa-regular fa-user'></i>".html_safe,
+                      input_html: { class: "form-control" } %>
+          <%= f.input :daily_price,
+                      placeholder: 'Enter daily price (e.g., 500)',
+                      label: "Daily Price (€)",
+                      input_html: { class: "form-control" } %>
+        </div>
+
+        <!-- Left Column (Size, Images) -->
+        <div class="left-form">
+          <%= f.input :size,
+                      placeholder: 'Size of the boat',
+                      label: "Boat Size",
+                      input_html: { class: "form-control" } %>
+          <%= f.input :url_img,
+                      placeholder: 'Image link for the boat',
+                      label: "Boat Photo 1 <i class='fa-regular fa-image'></i>".html_safe,
+                      input_html: { class: "form-control" } %>
+          <%= f.input :url_img_two,
+                      placeholder: 'Additional image link',
+                      label: "Boat Photo 2 <i class='fa-regular fa-image'></i>".html_safe,
+                      input_html: { class: "form-control" } %>
+          <%= f.input :url_img_three,
+                      placeholder: 'Another image link',
+                      label: "Boat Photo 3 <i class='fa-regular fa-image'></i>".html_safe,
+                      input_html: { class: "form-control" } %>
+        </div>
+
+        <!-- Content Column -->
+        <div class="content">
+          <%= f.input :content,
+                      as: :text,
+                      hint: 'Provide a description of your boat and its features.',
+                      label: 'Boat Description <i class="fa-regular fa-pen-to-square"></i>'.html_safe,
+                      input_html: { rows: 5, class: "form-control" } %>
+        </div>
+      </div>
+
+      <!-- Buttons -->
+      <div class="d-flex justify-content-center gap-3 mt-4">
+        <!-- Update Button -->
+        <%= f.button :submit, "Update Boat", class: "btn btn-secondary px-4 py-2" %>
+
+        <!-- Delete Button -->
+        <%= link_to "Delete", boat_path(@boat),
+                    data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this boat?" },
+                    class: "btn btn-info px-4 py-2" %>
+      </div>
+    <% end %>
+  </div>
+</div>
