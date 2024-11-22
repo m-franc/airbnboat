@@ -1,5 +1,6 @@
 .body-form {
   background-color: $bleu-moyen;
+  border-radius: 0!important;  // Annule tout rayon de bordure sur ce conteneur
 }
 
 .container-form {
@@ -12,7 +13,7 @@
   margin: 0 auto;
   background-color: white;
   padding: 3% 5% 2% 5%;
-  border-radius: 10px;
+
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 
   input {
