@@ -55,8 +55,24 @@
     margin-top: 20px;
 
     h4 {
-      color: $bleu-fonce;
+      font-weight: bold; /* Mettre le texte en gras */
+      font-size: 1.5rem; /* Taille personnalisée */
+      color: $bleu-fonce; /* Couleur personnalisée */
       margin-bottom: 15px;
+    }
+
+    #price {
+      font-weight: bold; /* Texte en gras */
+      font-size: 1.3rem; /* Taille légèrement réduite */
+      color: $bleu-fonce; /* Couleur personnalisée */
+      opacity: 0; /* Départ invisible */
+      transform: translateY(10px); /* Départ avec un léger décalage */
+      transition: opacity 1s ease, transform 1s ease; /* Animation sur une seconde */
+    }
+
+    #price.show {
+      opacity: 1; /* Devenir visible */
+      transform: translateY(0); /* Revenir à la position normale */
     }
 
     .form-control {
@@ -72,6 +88,10 @@
       &:focus {
         box-shadow: 0 0 5px $bleu-moyen;
       }
+    }
+
+    .resa {
+      padding-bottom: 25px;
     }
 
     .btn-primary {

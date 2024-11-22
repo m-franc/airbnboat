@@ -16,6 +16,7 @@ class BoatsController < ApplicationController
 
   def show
     @boat = Boat.find(params[:id])
+    @review = Review.new
   end
 
   def new

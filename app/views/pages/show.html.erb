@@ -15,10 +15,10 @@
     <div class="col-md-5">
       <div class="details-card p-4 rounded shadow">
         <p class="mb-3"><strong>Capacité :</strong> <%= @boat.capacity %> personnes</p>
-        <p class="mb-3"><strong>Taille :</strong> <%= @boat.size %> mètres</p>
+        <p class="mb-3"><strong>Size boat :</strong> <%= @boat.size %> mètres</p>
         <p class="mb-3"><strong>Description :</strong> <%= @boat.content %></p>
-        <p class="mb-3"><strong>Prix :</strong> <%= number_to_currency(@boat.daily_price, unit: "€", format: "%n %u") %> / jour</p>
-        <%= link_to "Réserver ce bateau", new_booking_path(boat_id: @boat.id), class: "btn btn-success btn-lg btn-block mt-4" %>
+        <p class="mb-3"><strong>Price :</strong> <%= number_to_currency(@boat.daily_price, unit: "€", format: "%n %u") %> / jour</p>
+        <%= link_to "Book this boat", new_booking_path(boat_id: @boat.id), class: "btn btn-success btn-lg btn-block mt-4" %>
       </div>
     </div>
   </div>
@@ -26,19 +26,19 @@
   <!-- Reviews Section -->
   <div class="row mt-5">
     <div class="col-md-7">
-      <h3 class="mb-4">Avis sur ce bateau</h3>
+      <h3 class="mb-4">Review of this boat</h3>
       <% if @boat.reviews.any? %>
         <% @boat.reviews.each do |review| %>
           <div class="review-card p-4 rounded shadow mb-3">
-            <p class="mb-2"><strong>Avis :</strong> <%= review.review %></p>
+            <p class="mb-2"><strong>Review :</strong> <%= review.review %></p>
             <p class="mb-2"><strong>Note :</strong> <%= review.rating %>/5</p>
-            <p class="text-muted"><em>Posté par <%= review.user.email %> le <%= l(review.created_at, format: :short) %></em></p>
+            <p class="text-muted"><em>Posted by <%= review.user.email %> le <%= l(review.created_at, format: :short) %></em></p>
           </div>
         <% end %>
       <% else %>
         <p class="text-muted">
-          Aucun avis pour ce bateau pour le moment.
-          <%= link_to "Soyez le premier à en laisser un !", new_review_path(boat_id: @boat.id), class: "btn-link" %>
+          No reviews for this boat at the moment.
+          <%= link_to "Be the first to leave one!", new_review_path(boat_id: @boat.id), class: "btn-link" %>
         </p>
       <% end %>
     </div>

@@ -23,13 +23,14 @@ class ReviewsController < ApplicationController
 
   # POST /boats/:boat_id/reviews (if nested)
   def create
-    @review = @boat.reviews.build(review_params)
+    # Review.new(boat: @boat)
+    @review = Review.new(review_params)
+    @review.boat = @boat
     @review.user = current_user # Assign the current user if logged in
-    
     if @review.save
       redirect_to boat_path(@boat), notice: 'Review was successfully created.'
     else
-      render :new, status: :unprocessable_entity
+      render 'boats/show', status: :unprocessable_entity
     end
   end
 
