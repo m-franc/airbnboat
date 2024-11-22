@@ -16,10 +16,10 @@
         <!-- Détails du bateau -->
         <div class="col-md-5">
           <div class="details-card rounded-card p-4 shadow">
-            <p class="mb-3"><strong>Capacity :</strong> <%= @boat.capacity %> people</p>
+            <p class="mb-3"><strong>Capacity :</strong> <%= @boat.capacity %> peoples</p>
             <p class="mb-3"><strong>Size :</strong> <%= @boat.size %> meters</p>
             <p class="mb-3"><strong>Description :</strong> <%= @boat.content %></p>
-            <p class="mb-3"><strong>Price :</strong> <%= number_to_currency(@boat.daily_price, unit: "€", format: "%n %u") %> / day</p>
+            <p class="mb-3"><strong>Price :</strong> <%= number_to_currency(@boat.daily_price, unit: "€", format: "%n %u") %> / day(s)</p>
           </div>
 
           <!-- Section Booking -->
@@ -39,7 +39,7 @@
 
                 <div class="form-group mb-3">
                   <%= f.input :people,
-                    label: "Number of people",
+                    label: "Number of people(s)",
                     input_html: { class: "form-control", placeholder: "Ex: 4" } %>
                 </div>
                 <div class="form-group">
@@ -70,6 +70,7 @@
                   <p class="mb-2"><strong>Note :</strong> <%= review.rating %>/5</p>
                   <p class="text-mutedport"><em>Posted by <%= review.user.email %> on <%= l(review.created_at, format: :short) %></em></p>
                 </div>
+              </div>
             <% end %>
           <% else %>
             <p class="text-mutedport">No reviews for this boat at the moment. Be the first to leave one!</p>
