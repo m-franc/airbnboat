@@ -41,7 +41,7 @@ class BoatsController < ApplicationController
     if @boat.update(boat_params)
       redirect_to @boat, notice: 'Boat was successfully updated.'
     else
-      redirect_to new_boat_path, alert: 'Could not update the boat. Please create a new one.'
+      render :edit, alert: 'Could not update the boat. Please create a new one.', status: :unprocessable_entity
     end
   end
 

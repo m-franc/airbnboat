@@ -8,7 +8,7 @@
         <!-- Colonne de droite (nom, location, capacity) -->
         <div class="right-form">
           <%= f.input :name, placeholder: 'Enter the name of your boat', label: 'Boat Name'%>
-         <%= f.input :location, placeholder: 'Location', label: "Location <i class='fa-solid fa-location-dot'></i>".html_safe %>
+          <%= f.input :location, placeholder: 'Location', label: "Location <i class='fa-solid fa-location-dot'></i>".html_safe %>
           <%= f.input :capacity, placeholder: 'Capacity', label: "Capacity <i class='fa-regular fa-user'></i> ".html_safe %>
           <%= f.input :daily_price, placeholder: 'Enter daily price (eg. 500)',  label: "Daily Price €"%>
 
@@ -16,7 +16,7 @@
 
         <!-- Colonne de gauche (size, daily_price, url_img) -->
         <div class="left-form">
-          <%= f.input :size, placeholder: 'Size of the boat' %>
+         <%= f.input :size, placeholder: 'Size of the boat' %>
          <%= f.input :url_img, placeholder: 'Put image link', label: "Boat Photo 1 <i class='fa-regular fa-image'></i> ".html_safe %>
          <%= f.input :url_img_two, placeholder: 'Put image link', label: "Boat Photo 2 <i class='fa-regular fa-image'></i> ".html_safe %>
          <%= f.input :url_img_three, placeholder: 'Put image link', label: "Boat Photo 3 <i class='fa-regular fa-image'></i> ".html_safe %>
