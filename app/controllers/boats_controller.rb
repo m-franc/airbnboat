@@ -23,12 +23,12 @@ class BoatsController < ApplicationController
   end
 
   def create
-    @boat = Boat.new(boat_params)
-    @boat.user = current_user
+    @boat = current_user.boats.new(boat_params)
     if @boat.save
-      redirect_to boat_path(@boat), notice: 'Boat was successfully created.'
+      redirect_to @boat, notice: 'Boat was successfully created.'
     else
-      render :new, status: :unprocessable_entity
+      flash.now[:alert] = 'Failed to create the boat. Please correct the errors below.'
+      render :new
     end
   end
 
@@ -36,17 +36,20 @@ class BoatsController < ApplicationController
   end
 
   def update
-    @boat = Boat.new(boat_params)
-    if @boat.save
-      redirect_to boats_path, notice: 'Boat was successfully udpated.'
+    @boat = Boat.find(params[:id])
+    if @boat.update(boat_params)
+      redirect_to @boat, notice: 'Boat was successfully updated.'
     else
-      render :new, status: :unprocessable_entity
+      redirect_to new_boat_path, alert: 'Could not update the boat. Please create a new one.'
     end
   end
 
   def destroy
-    @list.destroy
-    redirect_to boats_path, notice: 'Boat was successfully destroyed.'
+    if @boat.destroy
+      redirect_to root_path, notice: 'Boat was successfully destroyed.'
+    else
+      redirect_to boats_path, alert: 'Failed to delete the boat.'
+    end
   end
 
   private
