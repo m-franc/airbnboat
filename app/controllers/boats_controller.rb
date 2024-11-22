@@ -25,7 +25,8 @@ class BoatsController < ApplicationController
   def create
     @boat = current_user.boats.new(boat_params)
     if @boat.save
-      redirect_to @boat, notice: 'Boat was successfully created.'
+      flash[:notice] = 'Boat was successfully created!'
+      redirect_to @boat
     else
       flash.now[:alert] = 'Failed to create the boat. Please correct the errors below.'
       render :new
