@@ -1,0 +1,86 @@
+.body-form {
+
+    #profile-image-preview{
+      display: flex;
+      justify-content: center;
+    }
+
+
+
+  border-radius: 0!important;
+  padding-top: 2em;
+  padding-bottom: 3em;
+
+
+  margin: 0 auto;
+  background-color: $bleu-moyen;
+
+
+
+
+    input {
+      height: 33px;
+      border-radius: 10px;
+      border-color: $bleu-moyen;
+
+      &:focus {
+
+        border-color: $jaune-fonce;
+        box-shadow: 5px 5px 0 $jaune-fonce;
+        transition: box-shadow 0.3s ease;
+
+      }
+    }
+
+
+      height: 33px;
+      border-radius: 10px;
+      border-color: $bleu-moyen;
+      height: 200%;
+
+      &:focus {
+
+        border-color: $jaune-fonce;
+        box-shadow: 5px 5px 0 $jaune-fonce;
+        transition: box-shadow 0.3s ease;
+
+      }
+    }
+
+    .btn-submit:hover {
+      background-color: $bleu-moyen;
+    }
+
+    input[type="submit"] {
+      background: $bleu-moyen;
+      color: $jaune-fonce;
+      text-align: center;
+      align-items: center;
+      padding-bottom: 5px;
+      padding-top: 5px;
+
+      &:hover {
+        box-shadow: 5px 5px 0 $jaune-fonce;
+        transition: box-shadow 0.3s ease;
+
+      }
+      .custom-h4 {
+        font-size: 1rem; /* Ajustez la taille du h4 comme vous le souhaitez */
+      }
+
+      .custom-p {
+        font-size: 1.2rem; /* Ajustez la taille du p */
+      }
+
+
+    }
+
+
+
+.custom-shadow {
+  /* Ombre plus marquée */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.1);
+
+  /* Rayon de bordure plus large */
+  border-radius: 1.5rem; /* Augmenter pour des coins plus arrondis */
+}
