@@ -9,11 +9,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-
   </head>
 
   <body class="d-flex flex-column min-vh-100">
-
     <!-- Modal for Flash Messages -->
     <% flash.each do |key, value| %>
       <div class="alert alert-<%= key == 'notice' ? 'success' : 'danger' %> alert-dismissible fade show" role="alert">
@@ -22,17 +20,16 @@
       </div>
     <% end %>
 
-  <div class="d-flex flex-column">
-    <header>
-      <%= render 'layouts/navbar' %>
-    </header>
-    <main class="flex-grow-1">
-      <%= yield %>
-    </main>
-    <footer>
-      <%= render 'layouts/footer' %>
-    </footer>
-  </div>
+    <div class="d-flex flex-column flex-grow-1">
+      <header>
+        <%= render 'layouts/navbar' %>
+      </header>
+      <main class="flex-grow-1">
+        <%= yield %>
+      </main>
+      <footer class="mt-auto">
+        <%= render 'layouts/footer' %>
+      </footer>
+    </div>
   </body>
-
 </html>
