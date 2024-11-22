@@ -31,23 +31,25 @@
 
 }
 
-.form-actions {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: $bleu-moyen;
-  border-radius: 10px;
-  width: 100px;
-  margin: 0npx auto 10px auto;
+  .form-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $bleu-moyen;
+    border-radius: 10px;
+    width: 100px;
+    margin: 0px auto 10px auto;
 
-  &:hover {
-    transform: scale(1.05);
-  }
+    &:hover {
+      transform: scale(1.05);
+    }
 
-  input.btn {
-    color: $jaune-fonce;
+    input.btn {
+      color: $jaune-fonce;
+      justify-content: center;
+      align-items: center;
+    }
   }
-}
 
 .registration-link {
 
