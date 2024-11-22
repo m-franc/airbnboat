@@ -34,7 +34,7 @@
     height: 33px;
     border-radius: 10px;
     border-color: $bleu-moyen;
-    height: 200%;
+    height: 150%;
 
     &:focus {
 
@@ -58,6 +58,7 @@
       transition: box-shadow 0.3s ease;
     }
   }
+
 }
 
 
@@ -126,4 +127,31 @@
   color: $bleu-moyen; /* Remplacez cette couleur par celle que vous souhaitez */
   opacity: 0.5; /* Opacité pleine pour les placeholders */
   font-size: 12px;
+}
+
+#delete {
+
+  border-radius: 10px;
+  color: white;
+
+  &:hover{
+    color: $jaune-fonce;
+    background-color: white;
+  }
+}
+#update {
+  height: 40px;
+  padding: 8px 24px !important;  /* Ajoute le padding que tu veux */
+  text-align: center;  /* Centre le texte horizontalement */
+  line-height: normal;  /* Assure-toi que le texte est bien centré verticalement */
+  display: inline-flex;  /* Utilisation de Flexbox pour centrer */
+  justify-content: center;  /* Centre le texte horizontalement */
+  align-items: center;  /* Centre le texte verticalement */
+}
+
+.form-control.is-valid:focus,
+.form-control.is-invalid:focus {
+  border-color: #F1AE00;
+  box-shadow: 5px 5px 0 #F1AE00;
+  transition: box-shadow 0.3s ease;
 }
