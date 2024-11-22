@@ -3,6 +3,7 @@
   box-shadow: 5px 5px 10 $bleu-moyen;
   z-index: 2;
   position: relative;
+
 }
 
 .navbar-brand {
@@ -13,14 +14,11 @@
 
 }
 
+
 .menu {
   position: absolute;
-  left: 38%;
-}
-
-
-
-.menu {
+  left: 25%;
+  white-space: nowrap;
   color: $jaune-fonce;
   font-size: 20px;
   margin-left: 400px;
@@ -34,14 +32,19 @@
   .menu {
     margin-left: 250px; /* Réduction de la marge */
   }
-  @media (max-width: 800px) {
+  @media (max-width: 900px) {
     .menu {
       margin-left: 100px; /* Réduction de la marge */
     }
   }
-  @media (max-width: 550px) {
+  @media (max-width: 800px) {
     .menu {
       margin-left: 10px; /* Réduction de la marge */
+    }
+  }
+  @media (max-width: 600px) {
+    .menu {
+      display: none;
     }
   }
 }
@@ -81,8 +84,21 @@
     background-color: $bleu-moyen;
     transition: color 0.3s ease, background-color 0.3s ease; /* Transition pour couleur de fond et de texte */
   }
+
 }
 
+
+
+/* Ciblage spécifique de l'élément avec l'id #sign-out */
+#sign-out .dropdown-item {
+  color: rgb(159, 51, 51); /* La couleur de texte pour l'élément #sign-out */
+}
+
+#sign-out .dropdown-item:hover {
+  color: rgb(250, 9, 9);
+  background-color: transparent;
+
+}
 
 
 .profile {
@@ -162,27 +178,27 @@
   }
 }
 
-/* Lorsque la largeur de l'écran est inférieure à 700px, afficher le hamburger */
-@media (max-width: 700px) {
-  .navbar-expand-lg .navbar-collapse {
-    display: none; /* Cache le menu sur les petits écrans */
-  }
-
-  .navbar-expand-lg .navbar-toggler {
-    display: block; /* Affiche le bouton hamburger */
-  }
-
-  .navbar-expand-lg .navbar-collapse.collapse {
-    display: block !important; /* Affiche le menu quand il est activé */
-  }
 }
 
+.btnSiSu {
+  display: flex; /* Flexbox pour alignement horizontal */
+  justify-content: center; /* Centrer les boutons horizontalement */
+  align-items: center; /* Alignement vertical des éléments */
+  gap: 10px; /* Espacement uniforme entre les boutons */
 }
 
-.btn-signUp, .btn-signIn {
-  display: inline-block; /* Affiche les boutons côte à côte */
-  margin-right: 10px; /* Ajoute de l'espace entre les boutons */
+.btn-signUp,
+.btn-signIn {
+  display: inline-block; /* S'assure que chaque bouton est traité comme un élément inline */
+  margin: 0; /* Supprime les marges par défaut */
+  padding: 5px 10px; /* Uniformise les tailles de boutons */
+  text-align: center; /* Aligne le texte au centre */
+  font-size: 15px;
+  line-height: 1.5; /* Assure une hauteur de ligne uniforme */
+  border-radius: 20px;
+  white-space: nowrap;
 }
+
 .btn-signUp {
   border: solid 2px;
   background-color: $bleu-moyen;
