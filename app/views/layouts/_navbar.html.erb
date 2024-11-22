@@ -5,7 +5,7 @@
     <header>
 
       <nav class="navbar navbar-expand bg-body-tertiary">
-      <%= link_to image_tag("airbnboat_navbar.png", alt: "Boat-image", class: "navbar-brand"), root_path %>
+      <%= link_to image_tag("airbnboat.png", alt: "Boat-image", class: "navbar-brand"), root_path %>
         <div class="container-fluid">
 
           <div class="menu">
@@ -13,6 +13,7 @@
               </div>
           </div>
 <li class="nav-item dropdown" style="list-style: none; margin: 0; padding: 0;" >
+
   <% if user_signed_in? %>
     <!-- Image de profil ou par défaut avec dropdown -->
   <div class="profile">
