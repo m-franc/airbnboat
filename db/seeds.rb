@@ -23,7 +23,9 @@ boats = [
     size: 3,
     daily_price: 1200,
     user_id: user,
-    url_img: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?ixlib=rb-4.0.3"
+    url_img: "https://cdn.midjourney.com/ed1c5235-22bb-49d3-aab4-30d802bd95f5/0_3.png",
+    url_img_two: "https://cdn.midjourney.com/19160b4a-7e8d-44b5-a7f1-9f257c251462/0_2.png",
+    url_img_three: "https://cdn.midjourney.com/c5c0e255-2b23-4f9b-bcee-9d8644b9bcc2/0_1.png"
   },
   {
     name: "Wave Runner",
@@ -33,7 +35,9 @@ boats = [
     size: 3,
     daily_price: 450,
     user_id: user,
-    url_img: "https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?ixlib=rb-4.0.3"
+    url_img: "https://cdn.midjourney.com/ed1c5235-22bb-49d3-aab4-30d802bd95f5/0_2.png",
+    url_img_two: "https://cdn.midjourney.com/c5c0e255-2b23-4f9b-bcee-9d8644b9bcc2/0_3.png",
+    url_img_three: "https://cdn.midjourney.com/9298d762-8170-4387-8965-14e50e699b4d/0_0.png"
   },
   {
     name: "Island Hopper",
@@ -43,7 +47,9 @@ boats = [
     size: 3,
     daily_price: 800,
     user_id: user,
-    url_img: "https://images.unsplash.com/photo-1593351415075-3bac9f45c877?ixlib=rb-4.0.3"
+    url_img: "https://cdn.midjourney.com/ed1c5235-22bb-49d3-aab4-30d802bd95f5/0_1.png",
+    url_img_two: "https://cdn.midjourney.com/9298d762-8170-4387-8965-14e50e699b4d/0_2.png",
+    url_img_three: "https://cdn.midjourney.com/d04262af-587f-4ea3-92d1-86e7cfd8af76/0_0.png"
   },
   {
     name: "Coastal Explorer",
@@ -53,7 +59,9 @@ boats = [
     size: 3,
     daily_price: 300,
     user_id: user,
-    url_img: "https://cdn.midjourney.com/ed1c5235-22bb-49d3-aab4-30d802bd95f5/0_3.png"
+    url_img: "https://cdn.midjourney.com/ed1c5235-22bb-49d3-aab4-30d802bd95f5/0_0.png",
+    url_img_two: "https://cdn.midjourney.com/d04262af-587f-4ea3-92d1-86e7cfd8af76/0_1.png",
+    url_img_three: "https://cdn.midjourney.com/d04262af-587f-4ea3-92d1-86e7cfd8af76/0_2.png"
   },
   {
     name: "Ocean King",
@@ -63,7 +71,9 @@ boats = [
     size: 3,
     daily_price: 2000,
     user_id: user,
-    url_img: "https://cdn.midjourney.com/ed1c5235-22bb-49d3-aab4-30d802bd95f5/0_2.png"
+    url_img: "https://cdn.midjourney.com/2679368b-170d-4ab4-95d8-c0e8470abc08/0_3.png",
+    url_img_two: "https://cdn.midjourney.com/73829a85-a9bf-4cd6-b375-a9e37a1af9f8/0_0.png",
+    url_img_three: "https://cdn.midjourney.com/73829a85-a9bf-4cd6-b375-a9e37a1af9f8/0_1.png"
   },
   {
     name: "Bay Cruiser",
@@ -73,7 +83,9 @@ boats = [
     size: 3,
     daily_price: 500,
     user_id: user,
-    url_img: "https://images.unsplash.com/photo-1605281317010-fe5ffe798166?ixlib=rb-4.0.3"
+    url_img: "https://cdn.midjourney.com/2679368b-170d-4ab4-95d8-c0e8470abc08/0_0.png",
+    url_img_two: "https://cdn.midjourney.com/73829a85-a9bf-4cd6-b375-a9e37a1af9f8/0_2.png",
+    url_img_three: "https://cdn.midjourney.com/b70e0d49-807f-4d01-b08f-952d4ebea0b3/0_1.png"
   },
   {
     name: "Caribbean Dream",
@@ -83,7 +95,9 @@ boats = [
     size: 3,
     daily_price: 900,
     user_id: user,
-    url_img: "https://cdn.midjourney.com/ed1c5235-22bb-49d3-aab4-30d802bd95f5/0_1.png"
+    url_img: "https://cdn.midjourney.com/36513796-6f71-43f8-9174-ed485e7508da/0_2.png",
+    url_img_two: "https://cdn.midjourney.com/b70e0d49-807f-4d01-b08f-952d4ebea0b3/0_0.png",
+    url_img_three: "https://cdn.midjourney.com/6585e254-3068-4054-bc4f-5ae9bcbc7d1c/0_3.png"
   },
   {
     name: "Lake Master",
@@ -93,7 +107,9 @@ boats = [
     size: 3,
     daily_price: 350,
     user_id: user,
-    url_img: "https://cdn.midjourney.com/ed1c5235-22bb-49d3-aab4-30d802bd95f5/0_0.png"
+    url_img: "https://cdn.midjourney.com/7d0baeb7-f25a-4572-ad91-bb0ad978e658/0_3.png",
+    url_img_two: "https://cdn.midjourney.com/b856ac15-3304-40ed-9837-c540d25cb853/0_1.png",
+    url_img_three: "https://cdn.midjourney.com/6585e254-3068-4054-bc4f-5ae9bcbc7d1c/0_0.png"
   },
   {
     name: "Harbor Light",
@@ -103,19 +119,12 @@ boats = [
     size: 3,
     daily_price: 275,
     user_id: user,
-    url_img: "https://images.unsplash.com/photo-1540946485063-a40da27545f8?ixlib=rb-4.0.3"
-  },
-  {
-    name: "Gulf Star",
-    content: "Modern yacht with fishing equipment and sun deck",
-    location: "Tampa, FL",
-    capacity: 8,
-    size: 3,
-    daily_price: 750,
-    user_id: user,
-    url_img: "https://cdn.midjourney.com/2679368b-170d-4ab4-95d8-c0e8470abc08/0_3.png"
+    url_img: "https://cdn.midjourney.com/73829a85-a9bf-4cd6-b375-a9e37a1af9f8/0_1.png",
+    url_img_two: "https://cdn.midjourney.com/19e46b7b-7c3a-491f-a29f-4fe1003f4d19/0_1.png",
+    url_img_three: "https://cdn.midjourney.com/73829a85-a9bf-4cd6-b375-a9e37a1af9f8/0_0.png"
   }
 ]
+
 boats.each do |boat|
   Boat.create!(
     name: boat[:name],
@@ -125,6 +134,8 @@ boats.each do |boat|
     size: boat[:size],
     daily_price: boat[:daily_price],
     user: boat[:user_id],
-    url_img: boat[:url_img]
+    url_img: boat[:url_img],
+    url_img_two: boat[:url_img_two],
+    url_img_three: boat[:url_img_three]
   )
 end
