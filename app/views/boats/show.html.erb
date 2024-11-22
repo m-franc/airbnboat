@@ -9,9 +9,51 @@
 
       <div class="row">
         <!-- Image du bateau -->
-        <div class="col-md-7">
-          <%= image_tag @boat.url_img, alt: @boat.name, class: "img-fluid rounded shadow-lg" %>
-        </div>
+      <div class="col-md-7">
+    <div id="carousel-<%= @boat.id %>" class="carousel slide shadow-lg rounded">
+      <!-- Indicateurs -->
+      <div class="carousel-indicators">
+        <% if @boat.url_img.present? %>
+          <button type="button" data-bs-target="#carousel-<%= @boat.id %>" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <% end %>
+        <% if @boat.url_img_two.present? %>
+          <button type="button" data-bs-target="#carousel-<%= @boat.id %>" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <% end %>
+        <% if @boat.url_img_three.present? %>
+          <button type="button" data-bs-target="#carousel-<%= @boat.id %>" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <% end %>
+      </div>
+      <!-- Images -->
+      <div class="carousel-inner rounded">
+        <% if @boat.url_img.present? %>
+          <div class="carousel-item active">
+            <%= image_tag @boat.url_img, alt: @boat.name, class: "d-block w-100 img-fluid" %>
+          </div>
+        <% end %>
+        <% if @boat.url_img_two.present? %>
+          <div class="carousel-item">
+            <%= image_tag @boat.url_img_two, alt: "Boat Image 2", class: "d-block w-100 img-fluid" %>
+          </div>
+        <% end %>
+        <% if @boat.url_img_three.present? %>
+          <div class="carousel-item">
+            <%= image_tag @boat.url_img_three, alt: "Boat Image 3", class: "d-block w-100 img-fluid" %>
+          </div>
+        <% end %>
+
+
+    </div>
+    <!-- Navigation -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carousel-<%= @boat.id %>" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carousel-<%= @boat.id %>" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
 
         <!-- Détails du bateau -->
         <div class="col-md-5">
