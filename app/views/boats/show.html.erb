@@ -24,22 +24,17 @@
 
           <!-- Section Booking -->
           <div class="booking-card rounded-card mt-4 p-4 shadow">
-            <h4 class="mb-3 fw-bold d-flex justify-content-between align-items-center align-header">
-              <span class="resa">Make a reservation</span>
-              <% if user_signed_in? %>
-                <div id="price" class="text-end">
-                  <%= number_to_currency(@boat.daily_price, unit: "€", format: "%n %u") %>
-                  <p class="price-day">by day</p>
-                </div>
-              <% end %>
-            </h4>
+            <div class="d-flex justify-content-between align-items-center">
+              <h4>Make a reservation</h4>
+              <p class="price-day" id="price"></p>
+            </div>
             <% if user_signed_in? %>
               <%= simple_form_for [@boat, @boat.bookings.new] do |f| %>
                 <div class="form-group mb-3">
                   <%= f.input :start_date,
                     as: :string,
                     label: "Dates of your stay",
-                    input_html: { data: { controller: "datepicker" }, placeholder: "Put your dates", class: "form-control" } %>
+                    input_html: { data: { controller: "datepicker", datepicker_price_value: @boat.daily_price }, placeholder: "Put your dates", class: "form-control" } %>
                 </div>
 
                 <div class="form-group mb-3">
