@@ -61,13 +61,13 @@
         <div id="reviews" class="row">
           <% if @boat.reviews.any? %>
             <% @boat.reviews.each do |review| %>
-              <div class="col-md-6 mb-4">
-                <div class="review-card p-4 rounded shadow">
-                  <p class="mb-2"><strong>Avis :</strong> <%= review.review %></p>
-                  <p class="mb-2"><strong>Note :</strong> <%= review.rating %>/5</p>
-                  <p class="text-mutedport"><em>Posté par <%= review.user.email %> le <%= l(review.created_at, format: :short) %></em></p>
+                <div class="col-md-6 mb-4">
+                  <div class="review-card p-4 rounded shadow">
+                    <p class="mb-2"><strong>Avis :</strong> <%= review.review %></p>
+                    <p class="mb-2"><strong>Note :</strong> <%= review.rating %>/5</p>
+                    <p class="text-mutedport"><em>Posté par <%= review.user.email %> le <%= l(review.created_at, format: :short) %></em></p>
+                  </div>
                 </div>
-              </div>
             <% end %>
           <% else %>
             <p class="text-mutedport">Aucun avis pour ce bateau pour le moment. Soyez le premier à en laisser un !</p>
@@ -81,7 +81,7 @@
       <div class="row mt-5">
         <div class="col-md-12">
           <h3>Laissez un commentaire</h3>
-          <%= simple_form_for([@boat, @boat.reviews.new]) do |f| %>
+          <%= simple_form_for([@boat, @review]) do |f| %>
             <div class="form-row d-flex">
               <!-- Zone de texte -->
               <div class="form-group flex-grow-1 me-4" style="flex: 4;">
