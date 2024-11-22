@@ -1,5 +1,5 @@
 class BoatsController < ApplicationController
-  before_action :set_boat, only: [:show, :update, :destroy]
+  before_action :set_boat, only: [:show, :update, :edit, :destroy]
   before_action :authenticate_user!, only: [:new, :create]
 
   def index
@@ -30,6 +30,9 @@ class BoatsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit
   end
 
   def update

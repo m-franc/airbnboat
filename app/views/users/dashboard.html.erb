@@ -78,7 +78,7 @@
                   <% elsif Date.today <= Date.parse(booking.end_date) %>
                     <span class="badge bg-info">Ongoing</span>
                   <% else %>
-                    <span class="badge bg-grey">Passed</span>
+                    <span class="badge bg-grey text-secondary">Passed</span>
                   <% end %>
                 </td>
                 <td>
@@ -118,13 +118,14 @@
                 <td class="text-primary"><%= booking.start_date %></td>
                 <td class="text-primary"><%= booking.end_date %></td>
                 <td class="text-primary"><%= booking.total_price %> €</td>
+                <td class="text-primary"><%= booking.people %></td>
                 <td class="text-primary">
                   <% if Date.today < Date.parse(booking.start_date) %>
                     <span class="badge bg-success">Incoming</span>
                   <% elsif Date.today <= Date.parse(booking.end_date) %>
                     <span class="badge bg-info">Ongoing</span>
                   <% else %>
-                    <span class="badge bg-grey">Passed</span>
+                    <span class="badge bg-grey text-secondary">Passed</span>
                   <% end %>
                 </td>
                 <td>
