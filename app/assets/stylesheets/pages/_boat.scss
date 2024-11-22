@@ -59,6 +59,15 @@
       margin-bottom: 15px;
     }
 
+    #price {
+      .price-day {
+        font-style: italic;
+        font-size: 0.8rem; /* Taille réduite */
+        color: inherit; /* Même couleur que le prix */
+        margin-top: -5px; /* Espacement ajusté */
+      }
+    }
+
     .form-control {
       border: 1px solid $bleu-moyen;
       height: 50px;
@@ -72,6 +81,10 @@
       &:focus {
         box-shadow: 0 0 5px $bleu-moyen;
       }
+    }
+
+    .resa {
+      padding-bottom: 25px;
     }
 
     .btn-primary {
