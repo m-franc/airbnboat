@@ -75,7 +75,6 @@
                   <p class="mb-2"><strong>Note :</strong> <%= review.rating %>/5</p>
                   <p class="text-mutedport"><em>Posted by <%= review.user.email %> on <%= l(review.created_at, format: :short) %></em></p>
                 </div>
-              </div>
             <% end %>
           <% else %>
             <p class="text-mutedport">No reviews for this boat at the moment. Be the first to leave one!</p>
