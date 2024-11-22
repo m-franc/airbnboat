@@ -7,24 +7,33 @@
 }
 
 .navbar-brand {
-  height: 55px;
-  width: 105px;
+  height: 70px;
+  width: auto;
   margin-left: 20px;
   margin-top: 0px;
-
+  transition: all 0.3s ease;
 }
 
+.navbar-brand:hover {
+  transform: scale(1.04);
+  filter: brightness(1.1) drop-shadow(0 0 1px #f0f0f0);
+}
 
 .menu {
   position: absolute;
-  left: 25%;
+  left: 42%;
   white-space: nowrap;
-  color: $jaune-fonce;
-  font-size: 20px;
+  color: $bleu-fonce;
+  font-size: 25px;
   margin-left: 400px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: $jaune-fonce;
+  border-radius: 10px;
 
   &:hover {
-    color: $bleu-fonce;
+    color: $jaune-fonce;
+    background-color: $bleu-moyen;
   }
 }
 
@@ -104,8 +113,10 @@
 .profile {
   color: $bleu-moyen;
   margin-right: 30px;
-  height: 40px;
-  width: 40px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 60px;
+  width: 60px;
   border: 1px solid;
   border-color: $bleu-moyen;
   border-radius: 50%;
