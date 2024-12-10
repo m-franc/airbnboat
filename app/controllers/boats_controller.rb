@@ -17,6 +17,8 @@ class BoatsController < ApplicationController
   def show
     @boat = Boat.find(params[:id])
     @review = Review.new
+    bookings_dates = @boat.bookings.pluck(:start_date, :end_date)
+    @dates = bookings_dates.map { |booking| { from: booking[0], to: booking[1] } }
   end
 
   def new

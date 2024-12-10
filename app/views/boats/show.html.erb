@@ -76,7 +76,7 @@
                   <%= f.input :start_date,
                     as: :string,
                     label: "Dates of your stay",
-                    input_html: { data: { controller: "datepicker", datepicker_price_value: @boat.daily_price }, placeholder: "Put your dates", class: "form-control" } %>
+                    input_html: { data: { controller: "datepicker", datepicker_dates_value: @dates, datepicker_price_value: @boat.daily_price }, placeholder: "Put your dates", class: "form-control" } %>
                 </div>
 
                 <div class="form-group mb-3">
